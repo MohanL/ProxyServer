@@ -26,32 +26,7 @@
  *
  */
 int main(int argc, char * argv[]) {
-    int clientfd, port;
-    char *host, buf[MAXLINE];
-    rio_t rio;
     
-    if(argc!=3){
-        fprintf(stderr,"usage: %s <host> <port> \n",argv[0]);
-        exit(0);
-    }
-    
-    host = argv[1];
-    port = atoi(argv[2]);
-    
-    clientfd = open_clientfd(host, port);
-    rio_readinitb(&rio, clientfd);
-    
-    while(fgets(buf, MAXLINE, stdin) != NULL)
-    {
-        rio_writen(clientfd, buf, strlen(buf));
-        rio_readlineb(&rio, buf, MAXLINE);
-        fputs(buf, stdout);
-    }
-    close(clientfd);
-    exit(0);
-
-}
-    /* interative echo server
     int listenfd,connfd, port,clientlen;
     struct sockaddr_in clientaddr;
     struct hostent *hp;
@@ -71,27 +46,51 @@ int main(int argc, char * argv[]) {
         clientlen = sizeof(clientaddr);
         connfd = accept(listenfd, (void *)&clientaddr, &clientlen);
         printf("ckpt2\n");
-
+        
         // determine the domina name and IP address of the client
         hp = gethostbyaddr((const char *)&clientaddr.sin_addr.s_addr, sizeof(clientaddr.sin_addr.s_addr), AF_INET);
         printf("ckpt3\n");
-
+        
         haddrp = inet_ntoa(clientaddr.sin_addr);
         printf("server connected to %s (%s)\n",hp->h_name,haddrp);
         printf("ckpt4\n");
-
+        
         echo2(connfd);
         close(connfd);
         printf("ckpt5\n");
-
+        
     }
     exit(0);
-}
 
+}
+    /* interative echo server
      */
 
     /* simple echo server main routine
+     int clientfd, port;
+     char *host, buf[MAXLINE];
+     rio_t rio;
      
+     if(argc!=3){
+     fprintf(stderr,"usage: %s <host> <port> \n",argv[0]);
+     exit(0);
+     }
+     
+     host = argv[1];
+     port = atoi(argv[2]);
+     
+     clientfd = open_clientfd(host, port);
+     rio_readinitb(&rio, clientfd);
+     
+     while(fgets(buf, MAXLINE, stdin) != NULL)
+     {
+     rio_writen(clientfd, buf, strlen(buf));
+     rio_readlineb(&rio, buf, MAXLINE);
+     fputs(buf, stdout);
+     }
+     close(clientfd);
+     exit(0);
+
     */
     
     
