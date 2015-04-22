@@ -12,7 +12,7 @@
 #include <sys/types.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 
 
 void rio_readinitb(rio_t *rp, int fd){
