@@ -12,4 +12,4 @@
 #include <stdio.h>
 
 #endif /* defined(__Webserver__client__) */
-extern int open_clientfd(char * hostname, int port);
+int open_clientfd(char * hostname, int port);
