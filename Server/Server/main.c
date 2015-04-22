@@ -13,10 +13,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include "echo.h"
 #define MAXLINE 1000
+
+/* for future reference here is the prototype for the accept function
+ * int accept (int listenfd, struct sockaddr *addr, int *addrlen)
+ *
+ *
+ *
+ */
 int main(int argc, char * argv[]) {
-    
     int clientfd, port;
     char *host, buf[MAXLINE];
     rio_t rio;
@@ -40,6 +49,51 @@ int main(int argc, char * argv[]) {
     }
     close(clientfd);
     exit(0);
+
+}
+    /* interative echo server
+    int listenfd,connfd, port,clientlen;
+    struct sockaddr_in clientaddr;
+    struct hostent *hp;
+    char *haddrp;
+    
+    if(argc != 2)
+    {
+        fprintf(stderr,"usage: %s <port> \n",argv[0]);
+        exit(0);
+    }
+    port = atoi(argv[1]);
+    
+    printf("ckpt1\n");
+    listenfd = open_listenfd(port);
+    
+    while(1){
+        clientlen = sizeof(clientaddr);
+        connfd = accept(listenfd, (void *)&clientaddr, &clientlen);
+        printf("ckpt2\n");
+
+        // determine the domina name and IP address of the client
+        hp = gethostbyaddr((const char *)&clientaddr.sin_addr.s_addr, sizeof(clientaddr.sin_addr.s_addr), AF_INET);
+        printf("ckpt3\n");
+
+        haddrp = inet_ntoa(clientaddr.sin_addr);
+        printf("server connected to %s (%s)\n",hp->h_name,haddrp);
+        printf("ckpt4\n");
+
+        echo2(connfd);
+        close(connfd);
+        printf("ckpt5\n");
+
+    }
+    exit(0);
+}
+
+     */
+
+    /* simple echo server main routine
+     
+    */
+    
     
     /* readinitb, rio_readlineb and riowriten test
     // insert code here...
@@ -54,6 +108,6 @@ int main(int argc, char * argv[]) {
         rio_writen(STDOUT_FILENO,buf,n);
     }
      
-     */
+ 
     return 0;
-}
+         */

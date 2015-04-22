@@ -60,12 +60,12 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "google.com"
+            argument = "google.com 80"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "80"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

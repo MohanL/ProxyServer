@@ -11,6 +11,7 @@
 		01C142A71AE754840094B614 /* client.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C1429E1AE754840094B614 /* client.c */; };
 		01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142AC1AE755B30094B614 /* open_listenfd.c */; };
 		01C142B11AE7567A0094B614 /* rio.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142AF1AE7567A0094B614 /* rio.c */; };
+		01C142B41AE82CDB0094B614 /* echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142B21AE82CDB0094B614 /* echo.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		01C142AD1AE755B30094B614 /* open_listenfd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = open_listenfd.h; sourceTree = "<group>"; };
 		01C142AF1AE7567A0094B614 /* rio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rio.c; sourceTree = "<group>"; };
 		01C142B01AE7567A0094B614 /* rio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rio.h; sourceTree = "<group>"; };
+		01C142B21AE82CDB0094B614 /* echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = echo.c; sourceTree = "<group>"; };
+		01C142B31AE82CDB0094B614 /* echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				01C1429F1AE754840094B614 /* client.h */,
 				01C142AC1AE755B30094B614 /* open_listenfd.c */,
 				01C142AD1AE755B30094B614 /* open_listenfd.h */,
+				01C142B21AE82CDB0094B614 /* echo.c */,
+				01C142B31AE82CDB0094B614 /* echo.h */,
 				01C142971AE753E30094B614 /* main.c */,
 			);
 			path = Server;
@@ -133,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C142B41AE82CDB0094B614 /* echo.c in Sources */,
 				01C142B11AE7567A0094B614 /* rio.c in Sources */,
 				01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */,
 				01C142A71AE754840094B614 /* client.c in Sources */,
@@ -253,6 +259,7 @@
 				01C1429D1AE753E30094B614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
