@@ -11,6 +11,5 @@
 
 #include <stdio.h>
 
-#endif /* defined(__Webserver__open_listenfd__) */
-
 extern int open_listenfd(int port);
+#endif /* defined(__Webserver__open_listenfd__) */

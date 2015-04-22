@@ -11,5 +11,5 @@
 
 #include <stdio.h>
 
-#endif /* defined(__Webserver__client__) */
 int open_clientfd(char * hostname, int port);
+#endif /* defined(__Webserver__client__) */

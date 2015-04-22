@@ -10,7 +10,6 @@
 #define __Server__echo__
 
 #include <stdio.h>
-
+extern void echo2(int connfd);
 #endif /* defined(__Server__echo__) */
 
-extern void echo2(int connfd);
