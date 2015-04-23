@@ -19,6 +19,7 @@
 		01F72C751AE8B53300599320 /* clienterror.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C731AE8B53300599320 /* clienterror.c */; };
 		01F72C781AE8B58100599320 /* getfiletype.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C761AE8B58100599320 /* getfiletype.c */; };
 		01F72C7B1AE8B5B000599320 /* doit.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C791AE8B5B000599320 /* doit.c */; };
+		01F72C811AE8BCA700599320 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C801AE8BCA700599320 /* makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,7 @@
 		01F72C771AE8B58100599320 /* getfiletype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getfiletype.h; sourceTree = "<group>"; };
 		01F72C791AE8B5B000599320 /* doit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = doit.c; sourceTree = "<group>"; };
 		01F72C7A1AE8B5B000599320 /* doit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doit.h; sourceTree = "<group>"; };
+		01F72C801AE8BCA700599320 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				01F72C6E1AE8B3DF00599320 /* serve.h */,
 				01DCF6EB1AE8683600232206 /* m.h */,
 				01F72C691AE8B2B100599320 /* readme */,
+				01F72C801AE8BCA700599320 /* makefile */,
 				01F72C761AE8B58100599320 /* getfiletype.c */,
 				01F72C771AE8B58100599320 /* getfiletype.h */,
 			);
@@ -194,6 +197,7 @@
 				01C142B41AE82CDB0094B614 /* echo.c in Sources */,
 				01F72C751AE8B53300599320 /* clienterror.c in Sources */,
 				01C142B11AE7567A0094B614 /* rio.c in Sources */,
+				01F72C811AE8BCA700599320 /* makefile in Sources */,
 				01F72C7B1AE8B5B000599320 /* doit.c in Sources */,
 				01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */,
 				01DCF6EC1AE8683600232206 /* m.c in Sources */,
