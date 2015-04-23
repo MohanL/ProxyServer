@@ -10,13 +10,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "rio.h"
 #include <netinet/in.h>
-#include "open_listenfd.h"
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <unistd.h>
+
+#include "open_listenfd.h"
+#include "rio.h"
+#include "client.h"
+
 #define MAXLINE 100
 #define MAXBUF 100
 extern char **environ;
