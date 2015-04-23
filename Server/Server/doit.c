@@ -43,11 +43,21 @@ void doit(int fd)
     printf("%s\n",uri);
     printf("%s\n",version);
 
-    if(strstr(uri, "http://"))
-        printf("found http\n");
-    char *p = strtok(uri, "/");
-    printf("%s\n",p);
-    printf("%s\n",uri);
+    if(strstr(uri, "http://")) // case the server has http
+    {
+        
+    }
+    else                        // case the server doesn't have http
+    {
+        char *p = strtok(uri, "/");
+        printf("%s\n",p);
+        while (p != NULL)
+        {
+            printf ("%s\n",p);
+            p = strtok (NULL, "/");
+        }
+    }
+    
     
     
     //combine the request into (method suburi version\r\n host: server\r\n"
