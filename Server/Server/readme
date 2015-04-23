@@ -1,9 +1,7 @@
 what I have implmented :
-    1. client socket
-    2. a simple echo server that returns whatever he receives
-    3. a tiny server that does ..
-
-
+    1. client socket.
+    2. a simple echo server that returns whatever he receives.
 
 what I need to implement :
-    1. conbine the client socket descriptor with my current tiny server and send the request to the dist server.
+    2. modify do it so that it sends requests to the dest server.
+    3. modify read so that it reconstructs the request.

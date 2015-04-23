@@ -34,10 +34,12 @@ void doit(int fd)
     sscanf(buf,"%s %s %s", method, uri, version);
     if(strcasecmp(method, "GET"))
     {
-        clienterror(fd, method, "501", "NOT IMPLEMENTED", "tiny does not implement this method ");
+        clienterror(fd, method, "501", "NOT IMPLEMENTED", "tiny does not implement this method");
         return;
     }
     read_requesthdrs(&rio);
+    
+    /* Here we are suppose to send the request to the dest server and retrieve whatever we need */
     
     // parse uri from GET requests
     is_static = parse_uri(uri, filename, cgiargs);

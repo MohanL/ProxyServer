@@ -15,10 +15,14 @@
 #define MAXBUF   8192  /* Max I/O buffer size */
 #define LISTENQ  1024  /* Second argument to listen() */
 /* read and ignore request headers */
+
+/* I may need to modify this one */
 void read_requesthdrs(rio_t *rp)
 {
     char buf[MAXLINE];
     rio_readlineb(rp, buf,MAXLINE);
+    
+    printf("request : %s\n",buf);
     
     while (strcmp(buf,"\r\n")) {
         rio_readlineb(rp,buf,MAXLINE);
