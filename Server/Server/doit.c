@@ -24,7 +24,7 @@ void doit(int fd)
 {
     int is_static;
     struct stat sbuf;
-    char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[MAXLINE];
+    char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[];
     char filename[MAXLINE], cgiargs[MAXLINE];
     rio_t rio;
     
@@ -39,9 +39,9 @@ void doit(int fd)
     }
     // here I need to split the uri into two : server and suburi
     
-    printf("%s\n",method);
-    printf("%s\n",uri);
-    printf("%s\n",version);
+    //printf("%s\n",method);
+    //printf("%s\n",uri);
+    //printf("%s\n",version);
 
     if(strstr(uri, "http://")) // case the server has http
     {
@@ -50,20 +50,24 @@ void doit(int fd)
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         char *p = strtok(uri, "/");
+        char *server = p;
         char * suburi = p;
-        printf("%s\n",p);
+        //printf("%s\n",p);
         while (p != NULL)
         {
             suburi = p;
-            p = strtok (NULL, "/");
+            p= strtok (NULL, "/");
             
         }
-        printf("%s\n",suburi);
+        //printf("%s\n",suburi);
+        //combine the request into (method suburi version\r\n host: server\r\n"
+        nbuf = strcat(method,strcat(suburi,strcat(version,strcat("\r\n",strcat("host: ",strcat(server,"\r\n"))))))
+        printf("%s\n",nbuf);
     }
     
     
     
-    //combine the request into (method suburi version\r\n host: server\r\n"
+    
     
     read_requesthdrs(&rio);
 
