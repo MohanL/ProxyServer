@@ -28,7 +28,7 @@ iecho.o: rio.c rio.h client.c client.h echo.c echo.h open_listenfd.c open_listen
 
 clean:;-rm -f *.o core ProxyServer Simpleecho Iterativeecho
 
-rebuild:;clean build
+rebuild:; clean build
 
 se:$(TARGETS);$(CC) -o $(OUT_S) $(TARGETS)
 
