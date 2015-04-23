@@ -62,12 +62,53 @@ ssize_t rio_writen(int fd, void *usrbuf, size_t n)
     }
     return n;
 }
-
+/*
+ * rio_read - This is a wrapper for the Unix read() function that
+ *    transfers min(n, rio_cnt) bytes from an internal buffer to a user
+ *    buffer, where n is the number of bytes requested by the user and
+ *    rio_cnt is the number of unread bytes in the internal buffer. On
+ *    entry, rio_read() refills the internal buffer via a call to
+ *    read() if the internal buffer is empty.
+ */
+/* $begin rio_read */
 static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
 {
     printf("rio_read is called\n");
     int cnt;
-    while (rp -> rio_cnt <= 0) { /* refill if buf is empty */
+    
+    while (rp->rio_cnt <= 0) {  /* Refill if buf is empty */
+        rp->rio_cnt = read(rp->rio_fd, rp->rio_buf,
+                           sizeof(rp->rio_buf));
+        if (rp->rio_cnt < 0) {
+            if (errno != EINTR) /* Interrupted by sig handler return */
+                return -1;
+        }
+        else if (rp->rio_cnt == 0)  /* EOF */
+            return 0;
+        else
+            rp->rio_bufptr = rp->rio_buf; /* Reset buffer ptr */
+    }
+    
+    /* Copy min(n, rp->rio_cnt) bytes from internal buf to user buf */
+    cnt = n;
+    if (rp->rio_cnt < n)
+        cnt = rp->rio_cnt;
+    memcpy(usrbuf, rp->rio_bufptr, cnt);
+    rp->rio_bufptr += cnt;
+    rp->rio_cnt -= cnt;
+    printf("rio_read ends\n");
+
+    return cnt;
+}
+/* $end rio_read */
+
+//Mohan's version of code
+/*
+static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
+{
+    printf("rio_read is called\n");
+    int cnt;
+    while (rp -> rio_cnt <= 0) { // refill if buf is empty
         rp->rio_cnt = (int)read(rp->rio_fd, rp->rio_buf, sizeof(rp->rio_buf));
         if(rp -> rio_cnt < 0)
         {
@@ -88,6 +129,9 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
     printf("rio_read ends\n");
     return cnt;
 }
+*/
+
+//Mohan's version of code
 /*ssize_t rio_readlineb(rio_t *rp, void *usrbuf, size_t maxlen)
 {
     int n, rc;
