@@ -39,12 +39,11 @@ void doit(int fd)
     }
     // here I need to split the uri into two : server and suburi
     
-    char *p;
-    p = strtok (uri,"edu/");
-    
-    printf("%s\n",p);
+    printf("%s\n",method);
     printf("%s\n",uri);
+    printf("%s\n",version);
 
+    
     //combine the request into (method suburi version\r\n host: server\r\n"
     
     read_requesthdrs(&rio);
