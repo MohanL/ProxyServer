@@ -111,9 +111,10 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
 }
 */
 /* $end rio_readlineb */
-
+// rio_readlineb - robustly read a text line (buffered)
 ssize_t rio_readlineb(rio_t *rp, void * usrbuf, size_t maxlen)
 {
+    printf("rio_readlineb is called \n");
     int n, rc;
     char c, *bufp = usrbuf;
     
@@ -135,6 +136,7 @@ ssize_t rio_readlineb(rio_t *rp, void * usrbuf, size_t maxlen)
             return -1;
     }
     *bufp = 0;
+    printf("rio_readlineb ends \n");
     return n;
 }
 
