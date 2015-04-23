@@ -38,18 +38,13 @@ void doit(int fd)
         return;
     }
     // here I need to split the uri into two : server and suburi
-    int i;
+    
     char *p;
-    char *array[2];
-    i = 0;
-    p = strtok (buf,"com/");
-    while (p != NULL)
-    {
-        array[i++] = p;
-        p = strtok (NULL, "com/");
-    }
-    for (i=0;i<2; ++i)
-        printf("%s\n", array[i]);
+    p = strtok (uri,"edu/");
+    
+    printf("%s\n",p);
+    printf("%s\n",uri);
+
     //combine the request into (method suburi version\r\n host: server\r\n"
     
     read_requesthdrs(&rio);
