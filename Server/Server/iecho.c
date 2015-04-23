@@ -25,7 +25,7 @@
  *
  *
  */
-int iecho(int argc, char * argv[]) {
+int main(int argc, char * argv[]) {
     
     int listenfd,connfd, port,clientlen;
     struct sockaddr_in clientaddr;

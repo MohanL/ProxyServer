@@ -25,7 +25,7 @@
  *
  *
  */
-int secho(int argc, char * argv[]) {
+int main(int argc, char * argv[]) {
     int clientfd, port;
     char *host, buf[MAXLINE];
     rio_t rio;
