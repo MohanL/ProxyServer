@@ -26,7 +26,7 @@ m.o: open_listenfd.h open_listenfd.c rio.h rio.c doit.h doit.c
 simpleecho.o: rio.c rio.h client.c client.h echo.c echo.h open_listenfd.c open_listenfd.h
 iecho.o: rio.c rio.h client.c client.h echo.c echo.h open_listenfd.c open_listenfd.h
 
-clean:;-rm -f *.o core ProxyServer Simpleecho Iterativeecho
+clean:;kill %2 kill %2 -rm -f *.o core ProxyServer Simpleecho Iterativeecho
 
 rebuild:: clean build
 
