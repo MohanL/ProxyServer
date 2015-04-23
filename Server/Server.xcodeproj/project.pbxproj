@@ -40,6 +40,7 @@
 		01C142B31AE82CDB0094B614 /* echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echo.h; sourceTree = "<group>"; };
 		01DCF6EA1AE8683600232206 /* m.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m.c; sourceTree = "<group>"; };
 		01DCF6EB1AE8683600232206 /* m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m.h; sourceTree = "<group>"; };
+		01F72C691AE8B2B100599320 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 			children = (
 				01DCF6EA1AE8683600232206 /* m.c */,
 				01DCF6EB1AE8683600232206 /* m.h */,
+				01F72C691AE8B2B100599320 /* readme */,
 			);
 			name = "tiny server";
 			sourceTree = "<group>";
