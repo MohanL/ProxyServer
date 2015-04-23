@@ -17,6 +17,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include "echo.h"
+#include <sys/socket.h>
 #define MAXLINE 1000
 
 /* for future reference here is the prototype for the accept function
@@ -41,7 +42,7 @@ int main(int argc, char * argv[]) {
     listenfd = open_listenfd(port);
     while (1) {
         clientlen = sizeof(clientaddr);
-        connfd = accept(listenfd, (SA *)&clientaddr, &clientlen);
+        connfd = accept(listenfd, (void *)&clientaddr, &clientlen);
         
         /* Determine the domain name and IP address of the client */
         hp = gethostbyaddr((const char *)&clientaddr.sin_addr.s_addr,
