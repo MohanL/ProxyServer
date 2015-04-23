@@ -7,7 +7,6 @@
 //
 
 #include "serve.h"
-#include "m.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,6 +15,9 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <unistd.h>
+#include "getfiletype.h"
+#include "rio.h"
+
 #define MAXLINE 100
 #define MAXBUF 100
 extern char **environ;
@@ -38,7 +40,6 @@ void serve_static(int fd, char *filename, int filesize)
     rio_writen(fd, srcp, filesize);
     munmap(srcp, filesize);
 }
-// need to implement dup2
 void serve_dynamic(int fd, char *filename, char *cgiargs) {
     char buf[MAXLINE], *emptylist[] = { NULL };
     /* Return first part of HTTP response */

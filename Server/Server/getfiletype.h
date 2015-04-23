@@ -10,5 +10,5 @@
 #define __Server__getfiletype__
 
 #include <stdio.h>
-
+extern void get_filetype(char *filename, char * filetype);
 #endif /* defined(__Server__getfiletype__) */

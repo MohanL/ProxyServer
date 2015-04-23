@@ -11,5 +11,4 @@
 
 #include <stdio.h>
 extern int parse_uri(char * uri, char *filename, char * cgiargs);
-
 #endif /* defined(__Server__parse_uri__) */

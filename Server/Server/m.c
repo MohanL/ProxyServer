@@ -18,19 +18,8 @@
 
 #include "open_listenfd.h"
 #include "rio.h"
-#include "client.h"
+#include "doit.h"
 
-#include "parse_uri.h"
-#define MAXLINE 100
-#define MAXBUF 100
-
-
-void doit(int fd);
-void read_requesthdrs(rio_t *rp);
-
-void get_filetype(char * filename, char * filetype);
-
-void clienterror(int fd, char *cause, char *errnum, char * shortmsg, char *longmsg);
 
 int main (int argc, char **argv)
 {
