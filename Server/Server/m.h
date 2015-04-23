@@ -10,5 +10,11 @@
 #define __Server__m__
 
 #include <stdio.h>
-
+extern void doit(int fd);
+extern void read_requesthdrs(rio_t *rp);
+extern int  parse_uri(char *uri, char * filename, char *cgiars);
+extern void serve_static(int fd, char *filename, int filesize);
+extern void get_filetype(char * filename, char * filetype);
+extern void serve_dynamic(int fd, char *filename, char *cgiargs);
+extern void clienterror(int fd, char *cause, char *errnum, char * shortmsg, char *longmsg);
 #endif /* defined(__Server__m__) */

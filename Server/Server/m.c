@@ -19,6 +19,7 @@
 #include <unistd.h>
 #define MAXLINE 100
 #define MAXBUF 100
+extern char **environ;
 
 void doit(int fd);
 void read_requesthdrs(rio_t *rp);
@@ -51,6 +52,7 @@ int main (int argc, char **argv)
         close(connfd);
     }
 }
+
 void doit(int fd)
 {
     int is_static;
@@ -74,12 +76,12 @@ void doit(int fd)
     is_static = parse_uri(uri, filename, cgiargs);
     if(stat(filename,&sbuf) < 0)
     {
-        clienterror(fd, filename, "404", "NOT FOUND", "tiny cou;t not find this file");
+        clienterror(fd, filename, "404", "NOT FOUND", "tiny coult not find this file");
         return;
     }
     
     if(is_static){ // serve static content
-        if (!(S_ISREG(sbuf.st_mode)) || !(S_IRUSR& sbuf.st_mode)) {
+        if (!(S_ISREG(sbuf.st_mode)) || !(S_IRUSR & sbuf.st_mode)) {
             clienterror(fd, filename, "403", "FORBIDDEN", "Tiny could not read the file");
             return;
         }
@@ -203,5 +205,19 @@ void clienterror(int fd, char *cause, char *errnum,
     rio_writen(fd, body, strlen(body));
 }
 /* $end clienterror */
+
+/* read and ignore request headers */
+void read_requesthdrs(rio_t *rp)
+{
+    char buf[MAXLINE];
+    rio_readlineb(rp, buf,MAXLINE);
+    
+    while (strcmp(buf,"\r\n")) {
+        rio_readlineb(rp,buf,MAXLINE);
+        printf("%s",buf);
+    }
+    return;
+}
+
 
 
