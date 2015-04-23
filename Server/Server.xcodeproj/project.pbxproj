@@ -46,7 +46,6 @@
 		01C142B21AE82CDB0094B614 /* echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = echo.c; sourceTree = "<group>"; };
 		01C142B31AE82CDB0094B614 /* echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echo.h; sourceTree = "<group>"; };
 		01DCF6EA1AE8683600232206 /* m.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m.c; sourceTree = "<group>"; };
-		01DCF6EB1AE8683600232206 /* m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m.h; sourceTree = "<group>"; };
 		01F72C691AE8B2B100599320 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		01F72C6A1AE8B36900599320 /* parse_uri.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parse_uri.c; sourceTree = "<group>"; };
 		01F72C6B1AE8B36900599320 /* parse_uri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parse_uri.h; sourceTree = "<group>"; };
@@ -129,7 +128,6 @@
 				01F72C6B1AE8B36900599320 /* parse_uri.h */,
 				01F72C6D1AE8B3DF00599320 /* serve.c */,
 				01F72C6E1AE8B3DF00599320 /* serve.h */,
-				01DCF6EB1AE8683600232206 /* m.h */,
 				01F72C691AE8B2B100599320 /* readme */,
 				01F72C801AE8BCA700599320 /* makefile */,
 				01F72C761AE8B58100599320 /* getfiletype.c */,

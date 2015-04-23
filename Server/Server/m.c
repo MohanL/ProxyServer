@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Mohan Liu. All rights reserved.
 //
 
-#include "m.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
