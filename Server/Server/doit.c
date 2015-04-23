@@ -47,15 +47,16 @@ void doit(int fd)
     {
         
     }
-    else// case the server doesn't have http
+    else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         char *p = strtok(uri, "/");
         char * suburi = p;
         printf("%s\n",p);
         while (p != NULL)
         {
-            p = strtok (NULL, "/");
             suburi = p;
+            p = strtok (NULL, "/");
+            
         }
         printf("%s\n",suburi);
     }
