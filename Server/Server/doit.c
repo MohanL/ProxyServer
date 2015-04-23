@@ -35,7 +35,7 @@ void doit(int fd)
     if(strcasecmp(method, "GET"))
     {
         clienterror(fd, method, "501", "NOT IMPLEMENTED", "tiny does not implement this method");
-        return;
+        return;
     }
     // here I need to split the uri into two : server and suburi
     
@@ -47,7 +47,7 @@ void doit(int fd)
     {
         
     }
-    else                        // case the server doesn't have http
+    else// case the server doesn't have http
     {
         char *p = strtok(uri, "/");
         char * suburi = p;
