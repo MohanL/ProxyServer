@@ -7,8 +7,7 @@ OUT_EXE = Server
 
 #targets the name of the target, the dependencies of the target, and finally the action associated with the target:
 
-build: $(FILES)
-    $(CC) -o $(OUT_EXE) $(FILES)
+build: $(FILES);$(CC) -o $(OUT_EXE) $(FILES)
 
 
 client.o: client.c 
@@ -22,13 +21,10 @@ read.o: rio.c rio.h read.h
 clienterror.o: rio.h rio.c clienterror.h
 m.o: open_listenfd.h open_listenfd.c rio.h rio.c doit.h doit.c
 
-clean:
-    -rm -f *.o core Server
+clean:;-rm -f *.o core Server
 
 
-rebuild:
-    clean build
+rebuild:;clean build
 
 
-test:
-    ~cs252/labs15/proxy-test.py cycle1.csug.rochester.edu 8080
+test:;~cs252/labs15/proxy-test.py cycle1.csug.rochester.edu 8080
