@@ -19,6 +19,7 @@
 /* I may need to modify this one */
 void read_requesthdrs(rio_t *rp)
 {
+    printf("read_requesthdrs is called \n");
     char buf[MAXLINE];
     rio_readlineb(rp, buf,MAXLINE);
     
@@ -32,5 +33,6 @@ void read_requesthdrs(rio_t *rp)
     
     /* First problem, read the input from client */
     printf("request is : %s\n",buf);
+    printf("read_requesthdrs ended \n");
     return;
 }
