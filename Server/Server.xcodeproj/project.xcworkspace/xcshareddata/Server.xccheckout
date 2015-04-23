@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>10CDDE22-BEF0-4E19-AF99-3ACBE24A67B3</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Server</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AFBD22761ED76335E0A127D6680D4170A1B517AF</key>
 		<string>https://github.com/MohanL/CS252-A5.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Server/Server.xcodeproj</string>
+	<string>Server/Server.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AFBD22761ED76335E0A127D6680D4170A1B517AF</key>
