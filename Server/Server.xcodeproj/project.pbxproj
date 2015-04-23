@@ -13,6 +13,12 @@
 		01C142B11AE7567A0094B614 /* rio.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142AF1AE7567A0094B614 /* rio.c */; };
 		01C142B41AE82CDB0094B614 /* echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142B21AE82CDB0094B614 /* echo.c */; };
 		01DCF6EC1AE8683600232206 /* m.c in Sources */ = {isa = PBXBuildFile; fileRef = 01DCF6EA1AE8683600232206 /* m.c */; };
+		01F72C6C1AE8B36900599320 /* parse_uri.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C6A1AE8B36900599320 /* parse_uri.c */; };
+		01F72C6F1AE8B3DF00599320 /* serve.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C6D1AE8B3DF00599320 /* serve.c */; };
+		01F72C721AE8B4B200599320 /* read.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C701AE8B4B200599320 /* read.c */; };
+		01F72C751AE8B53300599320 /* clienterror.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C731AE8B53300599320 /* clienterror.c */; };
+		01F72C781AE8B58100599320 /* getfiletype.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C761AE8B58100599320 /* getfiletype.c */; };
+		01F72C7B1AE8B5B000599320 /* doit.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C791AE8B5B000599320 /* doit.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +47,18 @@
 		01DCF6EA1AE8683600232206 /* m.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m.c; sourceTree = "<group>"; };
 		01DCF6EB1AE8683600232206 /* m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m.h; sourceTree = "<group>"; };
 		01F72C691AE8B2B100599320 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
+		01F72C6A1AE8B36900599320 /* parse_uri.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parse_uri.c; sourceTree = "<group>"; };
+		01F72C6B1AE8B36900599320 /* parse_uri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parse_uri.h; sourceTree = "<group>"; };
+		01F72C6D1AE8B3DF00599320 /* serve.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serve.c; sourceTree = "<group>"; };
+		01F72C6E1AE8B3DF00599320 /* serve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serve.h; sourceTree = "<group>"; };
+		01F72C701AE8B4B200599320 /* read.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = read.c; sourceTree = "<group>"; };
+		01F72C711AE8B4B200599320 /* read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = read.h; sourceTree = "<group>"; };
+		01F72C731AE8B53300599320 /* clienterror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = clienterror.c; sourceTree = "<group>"; };
+		01F72C741AE8B53300599320 /* clienterror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clienterror.h; sourceTree = "<group>"; };
+		01F72C761AE8B58100599320 /* getfiletype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getfiletype.c; sourceTree = "<group>"; };
+		01F72C771AE8B58100599320 /* getfiletype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getfiletype.h; sourceTree = "<group>"; };
+		01F72C791AE8B5B000599320 /* doit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = doit.c; sourceTree = "<group>"; };
+		01F72C7A1AE8B5B000599320 /* doit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +117,20 @@
 			isa = PBXGroup;
 			children = (
 				01DCF6EA1AE8683600232206 /* m.c */,
+				01F72C731AE8B53300599320 /* clienterror.c */,
+				01F72C741AE8B53300599320 /* clienterror.h */,
+				01F72C701AE8B4B200599320 /* read.c */,
+				01F72C711AE8B4B200599320 /* read.h */,
+				01F72C791AE8B5B000599320 /* doit.c */,
+				01F72C7A1AE8B5B000599320 /* doit.h */,
+				01F72C6A1AE8B36900599320 /* parse_uri.c */,
+				01F72C6B1AE8B36900599320 /* parse_uri.h */,
+				01F72C6D1AE8B3DF00599320 /* serve.c */,
+				01F72C6E1AE8B3DF00599320 /* serve.h */,
 				01DCF6EB1AE8683600232206 /* m.h */,
 				01F72C691AE8B2B100599320 /* readme */,
+				01F72C761AE8B58100599320 /* getfiletype.c */,
+				01F72C771AE8B58100599320 /* getfiletype.h */,
 			);
 			name = "tiny server";
 			sourceTree = "<group>";
@@ -162,10 +192,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C142B41AE82CDB0094B614 /* echo.c in Sources */,
+				01F72C751AE8B53300599320 /* clienterror.c in Sources */,
 				01C142B11AE7567A0094B614 /* rio.c in Sources */,
+				01F72C7B1AE8B5B000599320 /* doit.c in Sources */,
 				01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */,
 				01DCF6EC1AE8683600232206 /* m.c in Sources */,
+				01F72C781AE8B58100599320 /* getfiletype.c in Sources */,
 				01C142A71AE754840094B614 /* client.c in Sources */,
+				01F72C721AE8B4B200599320 /* read.c in Sources */,
+				01F72C6F1AE8B3DF00599320 /* serve.c in Sources */,
+				01F72C6C1AE8B36900599320 /* parse_uri.c in Sources */,
 				01C142981AE753E30094B614 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
