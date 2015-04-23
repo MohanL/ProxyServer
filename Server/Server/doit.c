@@ -53,9 +53,10 @@ void doit(int fd)
         printf("%s\n",p);
         while (p != NULL)
         {
-            printf ("%s\n",p);
             p = strtok (NULL, "/");
         }
+        char * suburi = p;
+        printf("%s\n",suburi);
     }
     
     
