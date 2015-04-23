@@ -54,8 +54,8 @@ void doit(int fd)
         while (p != NULL)
         {
             p = strtok (NULL, "/");
+            char * suburi = p;
         }
-        char * suburi = p;
         printf("%s\n",suburi);
     }
     
