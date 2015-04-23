@@ -18,7 +18,9 @@
 #include <netdb.h>
 #include "echo.h"
 #include <sys/socket.h>
-#define MAXLINE 1000
+#define	MAXLINE	 8192  /* Max text line length */
+#define MAXBUF   8192  /* Max I/O buffer size */
+#define LISTENQ  1024  /* Second argument to listen() */
 
 /* for future reference here is the prototype for the accept function
  * int accept (int listenfd, struct sockaddr *addr, int *addrlen)

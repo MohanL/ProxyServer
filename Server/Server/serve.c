@@ -18,8 +18,9 @@
 #include "getfiletype.h"
 #include "rio.h"
 
-#define MAXLINE 100
-#define MAXBUF 100
+#define	MAXLINE	 8192  /* Max text line length */
+#define MAXBUF   8192  /* Max I/O buffer size */
+#define LISTENQ  1024  /* Second argument to listen() */
 extern char **environ;
 void serve_static(int fd, char *filename, int filesize)
 {

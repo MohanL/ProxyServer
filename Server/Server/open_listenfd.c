@@ -13,8 +13,10 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#define	MAXLINE	 8192  /* Max text line length */
+#define MAXBUF   8192  /* Max I/O buffer size */
+#define LISTENQ  1024  /* Second argument to listen() */
 
-#define LISTENQ (5)   /* Backlog for listen()   */
 
 int open_listenfd(int port)
 {
