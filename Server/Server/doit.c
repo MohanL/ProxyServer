@@ -24,7 +24,7 @@ void doit(int fd)
 {
     int is_static;
     struct stat sbuf;
-    char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE];
+    char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[MAXLINE];
     char filename[MAXLINE], cgiargs[MAXLINE];
     rio_t rio;
     
@@ -37,10 +37,22 @@ void doit(int fd)
         clienterror(fd, method, "501", "NOT IMPLEMENTED", "tiny does not implement this method");
         return;
     }
+    // here I need to split the uri into two : server and suburi
+    int i;
+    char *p;
+    char *array[2];
+    i = 0;
+    p = strtok (buf,"com/");
+    while (p != NULL)
+    {
+        array[i++] = p;
+        p = strtok (NULL, "com/");
+    }
+    for (i=0;i<2; ++i)
+        printf("%s\n", array[i]);
+    //combine the request into (method suburi version\r\n host: server\r\n"
     
-    printf("before I call read_requesthdrs: request is : %s\n",buf);
     read_requesthdrs(&rio);
-    printf("after I call read_requesthdrs: request is : %s\n",buf);
 
     
     /* Here we are suppose to send the request to the dest server and retrieve whatever we need */
