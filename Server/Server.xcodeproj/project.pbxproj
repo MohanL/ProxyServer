@@ -12,6 +12,7 @@
 		01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142AC1AE755B30094B614 /* open_listenfd.c */; };
 		01C142B11AE7567A0094B614 /* rio.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142AF1AE7567A0094B614 /* rio.c */; };
 		01C142B41AE82CDB0094B614 /* echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C142B21AE82CDB0094B614 /* echo.c */; };
+		01DCF6EC1AE8683600232206 /* m.c in Sources */ = {isa = PBXBuildFile; fileRef = 01DCF6EA1AE8683600232206 /* m.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		01C142B01AE7567A0094B614 /* rio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rio.h; sourceTree = "<group>"; };
 		01C142B21AE82CDB0094B614 /* echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = echo.c; sourceTree = "<group>"; };
 		01C142B31AE82CDB0094B614 /* echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echo.h; sourceTree = "<group>"; };
+		01DCF6EA1AE8683600232206 /* m.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = m.c; sourceTree = "<group>"; };
+		01DCF6EB1AE8683600232206 /* m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,15 @@
 		01C142961AE753E30094B614 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				01DCF6E91AE8681E00232206 /* tiny server */,
+				01DCF6E81AE8680F00232206 /* stuff */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		01DCF6E81AE8680F00232206 /* stuff */ = {
+			isa = PBXGroup;
+			children = (
 				01C142AF1AE7567A0094B614 /* rio.c */,
 				01C142B01AE7567A0094B614 /* rio.h */,
 				01C1429E1AE754840094B614 /* client.c */,
@@ -79,7 +91,16 @@
 				01C142B31AE82CDB0094B614 /* echo.h */,
 				01C142971AE753E30094B614 /* main.c */,
 			);
-			path = Server;
+			name = stuff;
+			sourceTree = "<group>";
+		};
+		01DCF6E91AE8681E00232206 /* tiny server */ = {
+			isa = PBXGroup;
+			children = (
+				01DCF6EA1AE8683600232206 /* m.c */,
+				01DCF6EB1AE8683600232206 /* m.h */,
+			);
+			name = "tiny server";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +162,7 @@
 				01C142B41AE82CDB0094B614 /* echo.c in Sources */,
 				01C142B11AE7567A0094B614 /* rio.c in Sources */,
 				01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */,
+				01DCF6EC1AE8683600232206 /* m.c in Sources */,
 				01C142A71AE754840094B614 /* client.c in Sources */,
 				01C142981AE753E30094B614 /* main.c in Sources */,
 			);
