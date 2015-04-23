@@ -1,11 +1,9 @@
 what I have implmented :
-
+    1. client socket
+    2. a simple echo server that returns whatever he receives
+    3. a tiny server that does ..
 
 
 
 what I need to implement :
-    1.create a connection with other servers interesting.
-
-
-Debugging info:
-the simpleecho doesn't really work'
+    1. conbine the client socket descriptor with my current tiny server and send the request to the dist server.
