@@ -22,7 +22,7 @@ void read_requesthdrs(rio_t *rp)
     char buf[MAXLINE];
     rio_readlineb(rp, buf,MAXLINE);
     
-    printf("request : %s\n",buf);
+    printf("request is : %s\n",buf);
     
     while (strcmp(buf,"\r\n")) {
         rio_readlineb(rp,buf,MAXLINE);
