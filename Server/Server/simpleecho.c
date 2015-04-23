@@ -46,7 +46,7 @@ int main(int argc, char * argv[]) {
     while (fgets(buf, MAXLINE, stdin) != NULL) {
         rio_writen(clientfd, buf, strlen(buf));
         rio_readlineb(&rio, buf, MAXLINE);
-        fputs(buf, stdout);
+        //fputs(buf, stdout);
         printf("so I am actually working: %s\n", buf);
     }
     close(clientfd); //line:netp:echoclient:close
