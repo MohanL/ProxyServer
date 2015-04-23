@@ -7,7 +7,8 @@ OUT_EXE = Server
 
 #targets the name of the target, the dependencies of the target, and finally the action associated with the target:
 
-build: $(FILES);$(CC) -o $(OUT_EXE) $(FILES)
+build: $(FILES);$(CC) -o $(OUT
+_EXE) $(FILES)
 
 
 client.o: client.c 
