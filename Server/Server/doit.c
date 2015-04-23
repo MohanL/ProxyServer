@@ -43,7 +43,7 @@ void doit(int fd)
     printf("%s\n",uri);
     printf("%s\n",version);
 
-    char *p = strtok(uri, "edu");
+    char *p = strtok(uri, "/");
     printf("%s\n",p);
     printf("%s\n",uri);
     
