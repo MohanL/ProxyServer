@@ -77,7 +77,7 @@ int open_clientfd(char * hostname, int port)
     
     //The bzero()function copies n bytes, each with a value of zero, into string s.
     
-    // I am not sure what this line does to the code
+    // some sort of initlization
     bzero((char *)&serveraddr,sizeof(serveraddr));
     
     //copy the first IP address in the host entry (which is already in network byte order) to the server’s socket address structure
