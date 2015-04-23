@@ -43,6 +43,8 @@ void doit(int fd)
     printf("%s\n",uri);
     printf("%s\n",version);
 
+    if(strstr(uri, "http://"))
+        printf("found http\n");
     char *p = strtok(uri, "/");
     printf("%s\n",p);
     printf("%s\n",uri);
