@@ -44,12 +44,11 @@ int main(int argc, char * argv[]) {
     rio_readinitb(&rio, clientfd);
     
     while (fgets(buf, MAXLINE, stdin) != NULL) {
-        printf("1so I am actually working: %s\n", buf);
         rio_writen(clientfd, buf, strlen(buf));
-        printf("2so I am actually working: %s\n", buf);
         rio_readlineb(&rio, buf, MAXLINE);
-        //fputs(buf, stdout);
         printf("3so I am actually working: %s\n", buf);
+        fputs(buf, stdout);
+
     }
     close(clientfd); //line:netp:echoclient:close
     exit(0);

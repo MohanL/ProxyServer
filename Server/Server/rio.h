@@ -22,7 +22,6 @@ typedef struct {
 
 extern void rio_readinitb(rio_t *rp, int fd);
 extern ssize_t rio_readn(int fd, void *usrbuf, size_t n);
-extern void rio_readinitb(rio_t *rp, int fd);
 extern ssize_t rio_writen(int fd, void *usrbuf, size_t n);
 extern ssize_t rio_readlineb(rio_t *rp, void * usrbuf, size_t maxlen);
 extern ssize_t rio_readnb(rio_t *rp,void *usrbuf,size_t n);
