@@ -37,7 +37,11 @@ void doit(int fd)
         clienterror(fd, method, "501", "NOT IMPLEMENTED", "tiny does not implement this method");
         return;
     }
+    
+    printf("before I call read_requesthdrs: request is : %s\n",buf);
     read_requesthdrs(&rio);
+    printf("after I call read_requesthdrs: request is : %s\n",buf);
+
     
     /* Here we are suppose to send the request to the dest server and retrieve whatever we need */
     
