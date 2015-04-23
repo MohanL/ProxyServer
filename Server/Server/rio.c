@@ -109,7 +109,6 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
 
 static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
 {
-    printf("rio_read is called\n");
     int cnt;
     while (rp -> rio_cnt <= 0) { // refill if buf is empty
         rp->rio_cnt = read(rp->rio_fd, rp->rio_buf, sizeof(rp->rio_buf));
@@ -129,7 +128,7 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
     memcpy(usrbuf,rp->rio_bufptr,cnt);
     rp->rio_bufptr += cnt;
     rp->rio_cnt -=cnt;
-    printf("rio_read ends\n");
+
     return cnt;
 }
 
@@ -163,7 +162,7 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n)
 // rio_readlineb - robustly read a text line (buffered)
 ssize_t rio_readlineb(rio_t *rp, void * usrbuf, size_t maxlen)
 {
-    printf("rio_readlineb is called \n");
+
     int n, rc;
     char c, *bufp = usrbuf;
     
@@ -185,7 +184,7 @@ ssize_t rio_readlineb(rio_t *rp, void * usrbuf, size_t maxlen)
             return -1;
     }
     *bufp = 0;
-    printf("rio_readlineb ends \n");
+
     return n;
 }
 

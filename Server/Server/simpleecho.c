@@ -46,7 +46,7 @@ int main(int argc, char * argv[]) {
     while (fgets(buf, MAXLINE, stdin) != NULL) {
         rio_writen(clientfd, buf, strlen(buf));
         rio_readlineb(&rio, buf, MAXLINE);
-        printf("3so I am actually working: %s\n", buf);
+
         fputs(buf, stdout);
 
     }
