@@ -9,7 +9,20 @@
 #ifndef __Server__m__
 #define __Server__m__
 
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <netinet/in.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <unistd.h>
+
+#include "open_listenfd.h"
+#include "rio.h"
+#include "client.h"
+
 extern void doit(int fd);
 extern void read_requesthdrs(rio_t *rp);
 extern int  parse_uri(char *uri, char * filename, char *cgiars);
