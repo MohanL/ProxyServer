@@ -10,6 +10,7 @@ OUT_EXE = Server
 build: $(FILES)
     $(CC) -o $(OUT_EXE) $(FILES)
 
+
 client.o: client.c 
 open_listenfd.o: open_listenfd.c
 rio.o: rio.c rio.h
@@ -24,8 +25,10 @@ m.o: open_listenfd.h open_listenfd.c rio.h rio.c doit.h doit.c
 clean:
     -rm -f *.o core Server
 
+
 rebuild:
     clean build
+
 
 test:
     ~cs252/labs15/proxy-test.py cycle1.csug.rochester.edu 8080
