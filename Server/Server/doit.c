@@ -37,6 +37,7 @@ void doit(int fd)
         clienterror(fd, method, "501", "NOT IMPLEMENTED", "tiny does not implement this method");
         return;
     }
+    
     // here I need to split the uri into two : server and suburi
     
      //printf("parsing request ********************\n");

@@ -21,6 +21,9 @@
 		01F72C781AE8B58100599320 /* getfiletype.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C761AE8B58100599320 /* getfiletype.c */; };
 		01F72C7B1AE8B5B000599320 /* doit.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C791AE8B5B000599320 /* doit.c */; };
 		01F72C811AE8BCA700599320 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 01F72C801AE8BCA700599320 /* makefile */; };
+		01FAC21A1AEAFC4200966384 /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC2191AEAFC4200966384 /* server.c */; };
+		01FAC21C1AEAFC8200966384 /* client.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC21B1AEAFC8200966384 /* client.c */; };
+		01FAC21E1AEAFCEA00966384 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC21D1AEAFCEA00966384 /* makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +67,9 @@
 		01F72C791AE8B5B000599320 /* doit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = doit.c; sourceTree = "<group>"; };
 		01F72C7A1AE8B5B000599320 /* doit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doit.h; sourceTree = "<group>"; };
 		01F72C801AE8BCA700599320 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		01FAC2191AEAFC4200966384 /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = server.c; path = examplecode/server.c; sourceTree = "<group>"; };
+		01FAC21B1AEAFC8200966384 /* client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = client.c; path = examplecode/client.c; sourceTree = "<group>"; };
+		01FAC21D1AEAFCEA00966384 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = makefile; path = examplecode/makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		01C142961AE753E30094B614 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				01FAC2181AEAFBE600966384 /* server */,
 				01DCF6E91AE8681E00232206 /* tiny server */,
 				01DCF6E81AE8680F00232206 /* stuff */,
 			);
@@ -141,6 +148,16 @@
 				01909F9C1AE98AB3003B72D6 /* echotest.sh */,
 			);
 			name = "tiny server";
+			sourceTree = "<group>";
+		};
+		01FAC2181AEAFBE600966384 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				01FAC2191AEAFC4200966384 /* server.c */,
+				01FAC21B1AEAFC8200966384 /* client.c */,
+				01FAC21D1AEAFCEA00966384 /* makefile */,
+			);
+			name = server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,11 +224,14 @@
 				01F72C7B1AE8B5B000599320 /* doit.c in Sources */,
 				01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */,
 				01DCF6EC1AE8683600232206 /* m.c in Sources */,
+				01FAC21C1AEAFC8200966384 /* client.c in Sources */,
 				01F72C781AE8B58100599320 /* getfiletype.c in Sources */,
 				01C142A71AE754840094B614 /* client.c in Sources */,
 				01F72C721AE8B4B200599320 /* read.c in Sources */,
 				01F72C6F1AE8B3DF00599320 /* serve.c in Sources */,
+				01FAC21E1AEAFCEA00966384 /* makefile in Sources */,
 				01909F9B1AE977DD003B72D6 /* iecho.c in Sources */,
+				01FAC21A1AEAFC4200966384 /* server.c in Sources */,
 				01F72C6C1AE8B36900599320 /* parse_uri.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
