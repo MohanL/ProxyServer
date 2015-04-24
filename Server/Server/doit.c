@@ -39,13 +39,12 @@ void doit(int fd)
     }
     // here I need to split the uri into two : server and suburi
     
-    printf("parsing request ********************\n");
+     //printf("parsing request ********************\n");
     
     
     // so nbuf is the new request that we are going to send to the dest server.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
-        printf("case there is http\n");
         char *p = strtok(uri, "/");
         char *server = strtok (NULL, "/");
         char * suburi = p;
@@ -57,7 +56,6 @@ void doit(int fd)
             
         }
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost: %s\r\n",suburi,server);
-        printf("the formatted string: \n%s\n",nbuf);
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
@@ -74,10 +72,9 @@ void doit(int fd)
         }
         //combine the request into (method suburi version\r\n host: server\r\n"
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost: %s\r\n",suburi,server);
-        printf("the formatted string: \n%s\n",nbuf);
     }
     
-    printf("parsing request finished********************\n");
+    //printf("parsing request finished********************\n");
 
     
     read_requesthdrs(&rio);
