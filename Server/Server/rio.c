@@ -62,7 +62,7 @@ ssize_t rio_writen(int fd, void *usrbuf, size_t n)
     }
     return n;
 }
-/* Book's code for edbugging
+// Book's code for edbugging
 /*
  * rio_read - This is a wrapper for the Unix read() function that
  *    transfers min(n, rio_cnt) bytes from an internal buffer to a user

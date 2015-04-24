@@ -61,8 +61,9 @@ void doit(int fd)
         }
         //printf("%s\n",suburi);
         //combine the request into (method suburi version\r\n host: server\r\n"
-        nbuf = strcat(method,strcat(suburi,strcat(version,strcat("\r\n",strcat("host: ",strcat(server,"\r\n"))))))
-        printf("%s\n",nbuf);
+        char * result;
+        sprintf(result,"%s %s %s \r\n host: %s\r\n",method,suburi,version,server);
+        printf("%s\n",result);
     }
     
     
