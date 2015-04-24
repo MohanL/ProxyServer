@@ -66,8 +66,8 @@ void doit(int fd)
         printf("%s\n",suburi);
         printf("%s\n",version);
         printf("%s\n",server);
-        //sprintf(result,"GET \\%s %s \r\n host: %s\r\n",suburi,version,server);
-        //printf("%s\n",result);
+        sprintf(result,"GET \\%s %s \r\n host: %s\r\n",suburi,version,server);
+        printf("%s\n",result);
     }
     
     
