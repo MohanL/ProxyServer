@@ -24,7 +24,7 @@ void doit(int fd)
 {
     int is_static;
     struct stat sbuf;
-    char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE];
+    char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[MAXLINE];
     char filename[MAXLINE], cgiargs[MAXLINE];
     rio_t rio;
     
@@ -61,8 +61,8 @@ void doit(int fd)
         }
         //printf("%s\n",suburi);
         //combine the request into (method suburi version\r\n host: server\r\n"
-        sprintf(p,"GET %s HTTP/1.1\r\n host: %s\r\n",suburi,server);
-        printf("the formatted string: %s\n",p);
+        sprintf(nbuf,"GET %s HTTP/1.1\r\n host: %s\r\n",suburi,server);
+        printf("the formatted string: %s\n",nbuf);
     }
     
     
