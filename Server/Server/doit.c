@@ -62,8 +62,12 @@ void doit(int fd)
         //printf("%s\n",suburi);
         //combine the request into (method suburi version\r\n host: server\r\n"
         char * result;
-        sprintf(result,"%s %s %s \r\n host: %s\r\n",method,suburi,version,server);
-        printf("%s\n",result);
+        printf("%s\n",method);
+        printf("%s\n",suburi);
+        printf("%s\n",version);
+        printf("%s\n",server);
+        //sprintf(result,"%s %s %s \r\n host: %s\r\n",method,suburi,version,server);
+        //printf("%s\n",result);
     }
     
     
