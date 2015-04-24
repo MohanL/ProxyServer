@@ -42,10 +42,11 @@ void doit(int fd)
     //printf("%s\n",method);
     //printf("%s\n",uri);
     //printf("%s\n",version);
-
+    
     // so nbuf is the new request that we are going to send to the dest server.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
+        printf("case there is http\n");
         char *p = strtok(uri, "/");
         char *server = p;
         char * suburi = p;
@@ -63,6 +64,7 @@ void doit(int fd)
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
+        printf("case 2: there is no http\n");
         char *p = strtok(uri, "/");
         char *server = p;
         char * suburi = p;
