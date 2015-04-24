@@ -44,7 +44,7 @@ void doit(int fd)
     //printf("%s\n",version);
 
     // so nbuf is the new request that we are going to send to the dest server.
-    if(strstr(uri, "http://")) // case the server has http
+    if(strstr(uri, "http://")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         char *p = strtok(uri, "/");
         char *server = p;
@@ -57,7 +57,7 @@ void doit(int fd)
             
         }
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost: %s\r\n",suburi,server);
-        //printf("the formatted string: \n%s\n",nbuf);
+        printf("the formatted string: \n%s\n",nbuf);
 
 
     }
