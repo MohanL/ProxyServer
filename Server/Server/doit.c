@@ -39,10 +39,7 @@ void doit(int fd)
     }
     // here I need to split the uri into two : server and suburi
     
-    //printf("%s\n",method);
-    //printf("%s\n",uri);
-    //printf("%s\n",version);
-    
+    printf("parsing request ********************\n");
     // so nbuf is the new request that we are going to send to the dest server.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
