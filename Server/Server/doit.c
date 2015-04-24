@@ -61,17 +61,9 @@ void doit(int fd)
         }
         //printf("%s\n",suburi);
         //combine the request into (method suburi version\r\n host: server\r\n"
-        char * result;
-        //printf("%s\n",method);
-        //printf("%s\n",suburi);
-        //printf("%s\n",version);
-        //printf("%s\n",server);
-        sprintf(result,"GET %s HTTP/1.1\r\n host: %s\r\n",suburi,server);
-        printf("the formatted string: %s\n",result);
+        sprintf(p,"GET %s HTTP/1.1\r\n host: %s\r\n",suburi,server);
+        printf("the formatted string: %s\n",p);
     }
-    
-    
-    
     
     
     read_requesthdrs(&rio);
