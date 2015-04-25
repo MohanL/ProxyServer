@@ -81,7 +81,7 @@ int interclient(char * hostname,int port, char request[],int fd)
     // consider about the size of the return, what am I going to do ?
         //Receive a reply from the real server
     puts("Server reply :");
-    while( recv(sock,server_reply , MAXBUF , 0) > 0)
+    while( (recv(sock,server_reply , MAXBUF , 0) > 0) && (strcmp(server_reply, "")!=0))
     {
             puts(server_reply);
             sprintf(server_reply,"");
