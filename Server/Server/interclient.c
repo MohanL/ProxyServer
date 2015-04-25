@@ -58,6 +58,8 @@ int interclient(char * hostname,int port, char request[])
         return -1;
     }
     
+    printf("alright so connection is scucessful\n");
+    
     //going to send the server things that real client send to this server
     
     // over here the design is that this sock should exist until the real client is gone.
@@ -65,14 +67,14 @@ int interclient(char * hostname,int port, char request[])
     {
         puts("alright I am in side the reading writing loop now in the proxy client\n");
         //Send the modified request to the real server
-        if( send(sock , request, MAXBUF , 0) < 0)
+        if( send(sock,request, MAXBUF , 0) < 0)
         {
             puts("Send failed");
             return 1;
         }
         
         //Receive a reply from the real server
-        if( recv(sock , server_reply , MAXBUF , 0) < 0)
+        if( recv(sock,server_reply , MAXBUF , 0) < 0)
         {
             puts("recv failed");
             break;
