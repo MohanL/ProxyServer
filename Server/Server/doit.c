@@ -75,10 +75,11 @@ void doit(int fd)
             
         }
         //combine the request into (method suburi version\r\n host: server\r\n"
-        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n",suburi,server);
+        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
     }
     
-    printf("the request:\n%s\n",nbuf);
+    //printf("the request:\n%s\n",nbuf);
+    //sprintf(nbuf, "GET /%s HTTP/1.1\r\nhost:www.foo.com\r\n\r\n","mumbo.html");
     //printf("parsing request finished********************\n");
     // at this point we have variable char * server, char nbuf and port = 80
     
