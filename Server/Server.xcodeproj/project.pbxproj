@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016237F01AEC61780031F752 /* multiserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 016237EE1AEC61780031F752 /* multiserver.c */; };
 		01909F991AE977C1003B72D6 /* simpleecho.c in Sources */ = {isa = PBXBuildFile; fileRef = 01909F971AE977C1003B72D6 /* simpleecho.c */; };
 		01909F9B1AE977DD003B72D6 /* iecho.c in Sources */ = {isa = PBXBuildFile; fileRef = 01909F9A1AE977DD003B72D6 /* iecho.c */; };
 		01C142A71AE754840094B614 /* client.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C1429E1AE754840094B614 /* client.c */; };
@@ -40,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		016237EE1AEC61780031F752 /* multiserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = multiserver.c; sourceTree = "<group>"; };
 		01909F971AE977C1003B72D6 /* simpleecho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = simpleecho.c; sourceTree = "<group>"; };
 		01909F9A1AE977DD003B72D6 /* iecho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iecho.c; sourceTree = "<group>"; };
 		01909F9C1AE98AB3003B72D6 /* echotest.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = echotest.sh; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				01FAC2191AEAFC4200966384 /* server.c */,
 				01FAC21B1AEAFC8200966384 /* client.c */,
+				016237EE1AEC61780031F752 /* multiserver.c */,
 				01FAC21D1AEAFCEA00966384 /* makefile */,
 			);
 			name = server;
@@ -236,6 +239,7 @@
 				01C142B11AE7567A0094B614 /* rio.c in Sources */,
 				01F72C811AE8BCA700599320 /* makefile in Sources */,
 				01F72C7B1AE8B5B000599320 /* doit.c in Sources */,
+				016237F01AEC61780031F752 /* multiserver.c in Sources */,
 				01C142AE1AE755B30094B614 /* open_listenfd.c in Sources */,
 				01DCF6EC1AE8683600232206 /* m.c in Sources */,
 				01FAC21C1AEAFC8200966384 /* client.c in Sources */,
