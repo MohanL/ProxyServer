@@ -99,7 +99,7 @@ int interclient(char * hostname,int port, char request[],int fd)
     //puts("jail break?\n");
     //char client_message[MAXBUF];
     //sprintf(client_message, "message from the intermediate client\n");
-    write(fd, server_reply , MAXBUF);
+    write(fd, server_reply , sizeof(server_reply));
     close(sock);
     return 0;
     
