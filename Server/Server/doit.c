@@ -78,9 +78,11 @@ void doit(int fd)
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost: %s\r\n",suburi,server);
     }
     
+    printf("the request:\n%s\n",nbuf);
     //printf("parsing request finished********************\n");
     // at this point we have variable char * server, char nbuf and port = 80
-        interclient(server,80,nbuf);
+    
+    interclient(server,80,nbuf);
     
     // this line of code doesn't really do anything, does it ?
     //read_requesthdrs(&rio);

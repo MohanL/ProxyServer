@@ -63,7 +63,7 @@ int interclient(char * hostname,int port, char request[])
     // over here the design is that this sock should exist until the real client is gone.
     while(1)
     {
-        
+        puts("alright I am in side the reading writing loop now in the proxy client\n");
         //Send the modified request to the real server
         if( send(sock , request, MAXBUF , 0) < 0)
         {
@@ -83,6 +83,7 @@ int interclient(char * hostname,int port, char request[])
         puts("Server reply :");
         puts(server_reply);
     }
+    puts("jail break?\n");
     close(sock);
     return 0;
     
