@@ -24,6 +24,7 @@
 		01FAC21A1AEAFC4200966384 /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC2191AEAFC4200966384 /* server.c */; };
 		01FAC21C1AEAFC8200966384 /* client.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC21B1AEAFC8200966384 /* client.c */; };
 		01FAC21E1AEAFCEA00966384 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC21D1AEAFCEA00966384 /* makefile */; };
+		01FAC2251AEB273E00966384 /* interclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC2231AEB273E00966384 /* interclient.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,8 @@
 		01FAC2191AEAFC4200966384 /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = server.c; path = examplecode/server.c; sourceTree = "<group>"; };
 		01FAC21B1AEAFC8200966384 /* client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = client.c; path = examplecode/client.c; sourceTree = "<group>"; };
 		01FAC21D1AEAFCEA00966384 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = makefile; path = examplecode/makefile; sourceTree = "<group>"; };
+		01FAC2231AEB273E00966384 /* interclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = interclient.c; path = client/interclient.c; sourceTree = "<group>"; };
+		01FAC2241AEB273E00966384 /* interclient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = interclient.h; path = client/interclient.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				01FAC2181AEAFBE600966384 /* server */,
+				01FAC21F1AEB1FB600966384 /* intermediate */,
 				01DCF6E91AE8681E00232206 /* tiny server */,
 				01DCF6E81AE8680F00232206 /* stuff */,
 			);
@@ -158,6 +162,15 @@
 				01FAC21D1AEAFCEA00966384 /* makefile */,
 			);
 			name = server;
+			sourceTree = "<group>";
+		};
+		01FAC21F1AEB1FB600966384 /* intermediate */ = {
+			isa = PBXGroup;
+			children = (
+				01FAC2231AEB273E00966384 /* interclient.c */,
+				01FAC2241AEB273E00966384 /* interclient.h */,
+			);
+			name = intermediate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01909F991AE977C1003B72D6 /* simpleecho.c in Sources */,
+				01FAC2251AEB273E00966384 /* interclient.c in Sources */,
 				01C142B41AE82CDB0094B614 /* echo.c in Sources */,
 				01F72C751AE8B53300599320 /* clienterror.c in Sources */,
 				01C142B11AE7567A0094B614 /* rio.c in Sources */,
