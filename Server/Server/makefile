@@ -36,6 +36,8 @@ se:$(TARGETS);$(CC) -o $(OUT_S) $(TARGETS)
 
 ie:$(OBJECTS);$(CC) -o $(OUT_I) $(OBJECTS)
 
+host:$(cc) -o localhost localhost.c
+
 e::se ie
 
 test:;~cs252/labs15/proxy-test.py cycle1.csug.rochester.edu 8080
