@@ -61,9 +61,17 @@ int main(int argc , char *argv[])
             puts("recv failed");
             //break;
         }
+    
         puts("message received\n");
         puts("Server reply :");
         puts(server_reply);
+        if( recv(sock , server_reply , 10000 , 0) < 0)
+        {
+            puts("recv failed");
+            //break;
+        }
+        puts(server_reply);
+
    // }
     
     close(sock);
