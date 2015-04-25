@@ -28,9 +28,9 @@ int main(int argc , char *argv[])
     }
     puts("Socket created");
     
-    server.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server.sin_addr.s_addr = inet_addr("107.20.207.141");
     server.sin_family = AF_INET;
-    server.sin_port = htons( 4414 );
+    server.sin_port = htons(80);
     
     //Connect to remote server
     if (connect(sock , (struct sockaddr *)&server , sizeof(server)) < 0)
@@ -44,9 +44,11 @@ int main(int argc , char *argv[])
     //keep communicating with server
     //while(1)
 
-        printf("Enter message : ");
+    //    printf("Enter message : ");
+    
         //scanf("%s" , message);
-        sprintf(message, "GET /%s HTTP/1.1\r\nhost:www.cycle1.csug.rochester.edu\r\n\r\n","home.html");
+        sprintf(message, "GET /%s HTTP/1.1\r\nhost:www.foo.com\r\n\r\n","mumbo.html");
+        puts(message);
         //Send some data
         puts(message);
         if( send(sock , message , strlen(message) , 0) < 0)
