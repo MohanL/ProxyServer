@@ -40,7 +40,7 @@ int main (int argc, char **argv)
     while(1)
     {
         clientlen = sizeof(clientaddr);
-        if((connfd = accept(listenfd,(void *) &clientaddr,(socklen_t *)&clientlen)) < 0)
+        if((connfd = accept(listenfd,(void *) &clientaddr,&clientlen)) < 0)
         {
             perror("accept failed\n");
             return -1;
