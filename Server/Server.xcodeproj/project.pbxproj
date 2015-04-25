@@ -137,7 +137,6 @@
 				01F72C731AE8B53300599320 /* clienterror.c */,
 				01F72C741AE8B53300599320 /* clienterror.h */,
 				01F72C701AE8B4B200599320 /* read.c */,
-				01909F9D1AE99575003B72D6 /* stest.sh */,
 				01F72C711AE8B4B200599320 /* read.h */,
 				01F72C791AE8B5B000599320 /* doit.c */,
 				01F72C7A1AE8B5B000599320 /* doit.h */,
@@ -150,6 +149,7 @@
 				01F72C761AE8B58100599320 /* getfiletype.c */,
 				01F72C771AE8B58100599320 /* getfiletype.h */,
 				01909F9C1AE98AB3003B72D6 /* echotest.sh */,
+				01909F9D1AE99575003B72D6 /* stest.sh */,
 			);
 			name = "tiny server";
 			sourceTree = "<group>";

@@ -34,11 +34,18 @@ int main (int argc, char **argv)
     
     port = atoi(argv[1]);
     
+    // prepare a server socket which is ready to connect to client
     listenfd = open_listenfd(port);
+    
     while(1)
     {
         clientlen = sizeof(clientaddr);
-        connfd = accept(listenfd,(void *) &clientaddr,&clientlen);
+        if((connfd = accept(listenfd,(void *) &clientaddr,(socklen_t *)&clientlen)) < 0)
+        {
+            perror("accept failed\n");
+            return -1;
+        }
+        puts("connection accepted\n");
         doit(connfd);
         close(connfd);
     }

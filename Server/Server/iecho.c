@@ -18,6 +18,7 @@
 #include <netdb.h>
 #include "echo.h"
 #include <sys/socket.h>
+#include <unistd.h>
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
 #define LISTENQ  1024  /* Second argument to listen() */

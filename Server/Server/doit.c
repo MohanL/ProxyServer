@@ -17,6 +17,7 @@
 #include "read.h"
 #include "serve.h"
 #include "clienterror.h"
+#include "./intermediate/interclient.h"
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
 #define LISTENQ  1024  /* Second argument to listen() */
@@ -27,6 +28,8 @@ void doit(int fd)
     char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[MAXLINE];
     char filename[MAXLINE], cgiargs[MAXLINE];
     rio_t rio;
+    
+    char * server, *p, *suburi;
     
     // read request line and headers
     rio_readinitb(&rio,fd);
@@ -46,9 +49,9 @@ void doit(int fd)
     // so nbuf is the new request that we are going to send to the dest server.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
-        char *p = strtok(uri, "/");
-        char *server = strtok (NULL, "/");
-        char * suburi = p;
+        p = strtok(uri, "/");
+        server = strtok (NULL, "/");
+        suburi = p;
         //printf("%s\n",p);
         while (p != NULL)
         {
@@ -61,9 +64,9 @@ void doit(int fd)
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         //printf("case 2: there is no http\n");
-        char *p = strtok(uri, "/");
-        char *server = p;
-        char * suburi = p;
+        p = strtok(uri, "/");
+        server = p;
+        suburi = p;
         //printf("%s\n",p);
         while (p != NULL)
         {
@@ -76,14 +79,17 @@ void doit(int fd)
     }
     
     //printf("parsing request finished********************\n");
-
+    // at this point we have variable char * server, char nbuf and port = 80
+        interclient(server,80,nbuf);
     
-    read_requesthdrs(&rio);
+    // this line of code doesn't really do anything, does it ?
+    //read_requesthdrs(&rio);
 
     
     /* Here we are suppose to send the request to the dest server and retrieve whatever we need */
     
     // parse uri from GET requests
+    /* we don't need to parse the URI
     is_static = parse_uri(uri, filename, cgiargs);
     if(stat(filename,&sbuf) < 0)
     {
@@ -106,4 +112,5 @@ void doit(int fd)
         }
         serve_dynamic(fd,filename,cgiargs);
     }
+     */
 }
