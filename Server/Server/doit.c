@@ -59,7 +59,7 @@ void doit(int fd)
             p= strtok (NULL, "/");
             
         }
-        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost: %s\r\n\r\n",suburi,server);
+        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         puts(nbuf);
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
