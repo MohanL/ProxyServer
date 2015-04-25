@@ -82,7 +82,7 @@ void doit(int fd)
     //printf("parsing request finished********************\n");
     // at this point we have variable char * server, char nbuf and port = 80
     
-    interclient(server,80,nbuf);
+    interclient(server,4414,nbuf);
     
     // this line of code doesn't really do anything, does it ?
     //read_requesthdrs(&rio);
