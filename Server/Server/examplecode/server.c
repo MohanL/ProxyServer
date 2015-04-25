@@ -65,7 +65,8 @@ int main(int argc , char *argv[])
     {
         //Send the message back to client
         write(client_sock , client_message , strlen(client_message));
-        write(client_sock,"I just want to talk to you",80);
+        char * ret  = "I just want to talk to you";
+        write(client_sock,ret,sizeof(ret));
     }
     
     if(read_size == 0)
