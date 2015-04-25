@@ -17,7 +17,7 @@
 #include "read.h"
 #include "serve.h"
 #include "clienterror.h"
-#include "./intermediate/interclient.h"
+#include "interclient.h"
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
 #define LISTENQ  1024  /* Second argument to listen() */
