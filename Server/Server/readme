@@ -24,7 +24,6 @@ Concern: for a while, I have been worring about my parse line stuff, today I am 
                       GET www.foo.com HTTP/1.1                          failed
                       I also need to prepare a case for nothing following the host name, which should directly go for home.html
 
-
                       b. static and dynamic stuff.
                       Here I need to incorporate the parse_uri and read functions .
                         
