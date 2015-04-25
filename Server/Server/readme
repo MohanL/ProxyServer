@@ -13,4 +13,17 @@ Goal: first get output from the remote server back to proxy server than back to 
 
 Problem : the format, I am not sure how to format it in the right way.
 
-          2. single thread, but multiple requests, how do I implement that ? 
+          2. single thread, but multiple requests, how do I implement that ?
+
+
+Concern: for a while, I have been worring about my parse line stuff, today I am going to thoroughtly test it out.
+         test cases : a. w/o http
+                      GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
+                      GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
+                        Test 1:
+
+
+
+                      b. static and dynamic stuff.
+                      Here I need to incorporate the parse_uri and read functions .
+                        

@@ -60,7 +60,8 @@ void doit(int fd)
             
         }
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
-        
+        printf("%s",nbuf);
+
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
@@ -78,6 +79,7 @@ void doit(int fd)
         //combine the request into (method suburi version\r\n host: server\r\n"
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         
+        printf("%s",nbuf);
     }
     
     
@@ -86,7 +88,7 @@ void doit(int fd)
     //printf("parsing request finished********************\n");
     // at this point we have variable char * server, char nbuf and port = 80
     
-    interclient(server,80,nbuf,fd);
+    //interclient(server,80,nbuf,fd);
     
     // this line of code doesn't really do anything, does it ?
     //read_requesthdrs(&rio);
