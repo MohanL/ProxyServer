@@ -59,7 +59,7 @@ int interclient(char * hostname,int port, char request[])
         return -1;
     }
     
-    printf("alright so connection is scucessful\n");
+    //printf("alright so connection is scucessful\n");
     
     //going to send the server things that real client send to this server
     
