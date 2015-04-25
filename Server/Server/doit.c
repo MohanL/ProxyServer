@@ -61,7 +61,7 @@ void doit(int fd)
         }
         
         if(strcmp(suburi, "http:")== 0)
-            sprintf(suburi, "home.html");
+            strcpy(suburi, "home.html");
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         printf("%s",nbuf);
 
@@ -80,7 +80,7 @@ void doit(int fd)
             
         }
         if(strcmp(suburi, server) == 0)
-            sprintf(suburi, "home.html");
+            strcpy(suburi, "home.html");
         //combine the request into (method suburi version\r\n host: server\r\n"
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         
