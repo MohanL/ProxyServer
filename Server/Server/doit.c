@@ -59,6 +59,9 @@ void doit(int fd)
             p= strtok (NULL, "/");
             
         }
+        
+        if(suburi == NULL)
+            sprintf(suburi, "home.html");
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         printf("%s",nbuf);
 
@@ -76,6 +79,8 @@ void doit(int fd)
             p= strtok (NULL, "/");
             
         }
+        if(suburi == NULL)
+            sprintf(suburi, "home.html");
         //combine the request into (method suburi version\r\n host: server\r\n"
         sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         

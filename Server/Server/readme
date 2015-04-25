@@ -18,10 +18,9 @@ Problem : the format, I am not sure how to format it in the right way.
 
 Concern: for a while, I have been worring about my parse line stuff, today I am going to thoroughtly test it out.
          test cases : a. w/o http
-                      GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
-                      GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
-                        Test 1:
-
+                      GET www.foo.com/mumbo.html HTTP/1.1               passed
+                      GET http://www.foo.com/mumbo.html HTTP/1.1        passed
+                      I also need to prepare a case for nothing following the host name, which should directly go for home.html
 
 
                       b. static and dynamic stuff.
