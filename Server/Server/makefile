@@ -11,8 +11,6 @@ OUT_I = Iterativeecho
 
 #targets the name of the target, the dependencies of the target, and finally the action associated with the target:
 
-build: $(FILES);$(CC) -o $(OUT_EXE) $(FILES)
-
 client.o: client.c 
 open_listenfd.o: open_listenfd.c
 rio.o: rio.c rio.h
@@ -27,10 +25,11 @@ m.o: open_listenfd.h open_listenfd.c rio.h rio.c doit.h doit.c
 simpleecho.o: rio.c rio.h client.c client.h echo.c echo.h open_listenfd.c open_listenfd.h
 iecho.o: rio.c rio.h client.c client.h echo.c echo.h open_listenfd.c open_listenfd.h
 
+rebuild::clean build
+
+build: $(FILES);$(CC) -o $(OUT_EXE) $(FILES)
 
 clean:;-rm -f *.o core ProxyServer Simpleecho Iterativeecho
-
-rebuild::clean build
 
 se:$(TARGETS);$(CC) -o $(OUT_S) $(TARGETS)
 

@@ -20,8 +20,8 @@ Concern: for a while, I have been worring about my parse line stuff, today I am 
          test cases : a. w/o http
                       GET www.foo.com/mumbo.html HTTP/1.1               passed
                       GET http://www.foo.com/mumbo.html HTTP/1.1        passed
-                      GET http://www.foo.com HTTP/1.1
-                      GET www.foo.com HTTP/1.1 
+                      GET http://www.foo.com HTTP/1.1                   failed
+                      GET www.foo.com HTTP/1.1                          failed
                       I also need to prepare a case for nothing following the host name, which should directly go for home.html
 
 

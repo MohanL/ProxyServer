@@ -59,10 +59,12 @@ void doit(int fd)
             p= strtok (NULL, "/");
             
         }
+        sprintf(nbuf,"1.GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+        printf("%s",nbuf);
         
         if(strcmp(suburi, "http:")== 0)
             strcpy(suburi, "home.html");
-        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+        sprintf(nbuf,"2.GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         printf("%s",nbuf);
 
     }
@@ -79,10 +81,14 @@ void doit(int fd)
             p= strtok (NULL, "/");
             
         }
+        
+        sprintf(nbuf,"1.GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+        
+        printf("%s",nbuf);
         if(strcmp(suburi, server) == 0)
             strcpy(suburi, "home.html");
         //combine the request into (method suburi version\r\n host: server\r\n"
-        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+        sprintf(nbuf,"2.GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         
         printf("%s",nbuf);
     }
