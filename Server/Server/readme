@@ -16,14 +16,16 @@ Problem : the format, I am not sure how to format it in the right way.
           2. single thread, but multiple requests, how do I implement that ?
 
 
-Concern: for a while, I have been worring about my parse line stuff, today I am going to thoroughtly test it out.
+Fixed: for a while, I have been worring about my parse line stuff, today I am going to thoroughtly test it out.
          test cases : a. w/o http
                       GET www.foo.com/mumbo.html HTTP/1.1               passed
                       GET http://www.foo.com/mumbo.html HTTP/1.1        passed
-                      GET http://www.foo.com HTTP/1.1                   failed
-                      GET www.foo.com HTTP/1.1                          failed
-                      I also need to prepare a case for nothing following the host name, which should directly go for home.html
+                      GET http://www.foo.com HTTP/1.1                   passed
+                      GET www.foo.com HTTP/1.1                          passed
 
-                      b. static and dynamic stuff.
-                      Here I need to incorporate the parse_uri and read functions .
-                        
+                      b. dynamic stuff.
+                      GET www.foo.com/cgi-bin/adder?1&2 HTTP/1.1        passed
+
+Concern: chunked transfer coding. I have never actually test it on really large websites. only small ones like www.foo.com
+
+current progress :  multithreading.
