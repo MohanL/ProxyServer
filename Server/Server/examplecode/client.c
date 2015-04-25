@@ -65,7 +65,7 @@ int main(int argc , char *argv[])
         puts("message received\n");
         puts("Server reply :");
         puts(server_reply);
-        
+    
         sprintf(server_reply,"");
         if( recv(sock , server_reply , 10000 , 0) < 0)
         {

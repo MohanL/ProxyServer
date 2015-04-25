@@ -63,10 +63,12 @@ int interclient(char * hostname,int port, char request[])
     //going to send the server things that real client send to this server
     
     // over here the design is that this sock should exist until the real client is gone.
-    while(1)
-    {
+    //while(1)
+    //{
         puts("alright I am in side the reading writing loop now in the proxy client\n");
         //Send the modified request to the real server
+    
+        sprintf(request, "GET /%s HTTP/1.1\r\nhost:www.cycle1.csug.rochester.edu\r\n\r\n","home.html");
         if( send(sock,request, MAXBUF , 0) < 0)
         {
             puts("Send failed");
@@ -77,14 +79,21 @@ int interclient(char * hostname,int port, char request[])
         if( recv(sock,server_reply , MAXBUF , 0) < 0)
         {
             puts("recv failed");
-            break;
+            //break;
         }
         
         // over here we need to send this message out back to the real client.
         
         puts("Server reply :");
         puts(server_reply);
-    }
+        sprintf(server_reply,"");
+        if( recv(sock,server_reply , MAXBUF , 0) < 0)
+        {
+            puts("recv failed");
+            //break;
+        }
+        puts(server_reply);
+        //}
     puts("jail break?\n");
     close(sock);
     return 0;
