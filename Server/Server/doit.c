@@ -75,7 +75,7 @@ void doit(int fd)
             
         }
         //combine the request into (method suburi version\r\n host: server\r\n"
-        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost: %s\r\n",suburi,server);
+        sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n",suburi,server);
     }
     
     printf("the request:\n%s\n",nbuf);
