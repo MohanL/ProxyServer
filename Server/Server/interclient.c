@@ -83,12 +83,15 @@ int interclient(char * hostname,int port, char request[],int fd)
     puts("Server reply :");
     while( (recv(sock,server_reply , MAXBUF , 0) > 0) && (strcmp(server_reply, "")!=0))
     {
+        
             puts(server_reply);
             sprintf(server_reply,"");
+            puts("inside the loop\n");
             //puts("recv failed");
             //break;
     }
-        
+    
+    puts("outside the loop\n");
         // over here we need to send this message out back to the real client.
     
         //}
