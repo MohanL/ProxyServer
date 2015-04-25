@@ -36,7 +36,7 @@ se:$(TARGETS);$(CC) -o $(OUT_S) $(TARGETS)
 
 ie:$(OBJECTS);$(CC) -o $(OUT_I) $(OBJECTS)
 
-host:$(cc) -o localhost localhost.c
+host:$(CC) -o localhost localhost.c
 
 e::se ie
 
