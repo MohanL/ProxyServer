@@ -19,7 +19,7 @@
 #define MAXBUF   8192  /* Max I/O buffer size */
 int interclient(char * hostname,int port, char request[])
 {
-    printf("*%s*\n",hostname);
+    //printf("*%s*\n",hostname);
     int sock;
     struct hostent *hp;
     struct sockaddr_in server;
@@ -59,7 +59,7 @@ int interclient(char * hostname,int port, char request[])
         return -1;
     }
     
-    //printf("alright so connection is scucessful\n");
+    printf("intermediate connection successful\n");
     
     //going to send the server things that real client send to this server
     
