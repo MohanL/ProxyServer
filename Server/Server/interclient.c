@@ -70,7 +70,7 @@ int interclient(char * hostname,int port, char request[])
         //Send the modified request to the real server
     
         //sprintf(request, "GET /%s HTTP/1.1\r\nhost:www.cycle1.csug.rochester.edu\r\n\r\n","home.html");
-        if( send(sock,nbuf, MAXBUF , 0) < 0)
+        if( send(sock,request, MAXBUF , 0) < 0)
         {
             puts("Send failed");
             return 1;
