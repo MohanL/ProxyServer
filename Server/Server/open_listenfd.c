@@ -85,7 +85,10 @@ int open_listenfd(int port)
      * stored in my_addr with the socket descriptor sockfd, the addrlen argument is sizeof(sockaddr_in)
      */
     if(bind(listenfd, (void *)&serveraddr, sizeof(serveraddr)) < 0)
+    {
+        perror("bind failed, Error");
         return -1;
+    }
     
      /* about listen function
       * context knowledge : Clients are active entities that initiate connection requests. Servers are passive entities that wait for 
@@ -97,8 +100,11 @@ int open_listenfd(int port)
       * it starts to refuse requests, based on cycle1 and cycle1's limit, we set this number to be relatively small comparing to a real webserver.
       */
      // make it a listening socket ready to accept connection requests
-    if(listen(listenfd,LISTENQ) < 0)
+    if(listen(listenfd,LISTENQ) < 0){
+        
+        perror("listen failed, Error");
         return -1;
+    }
     return listenfd;
     
 }
