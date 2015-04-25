@@ -48,15 +48,15 @@ int main(int argc , char *argv[])
     
         //scanf("%s" , message);
         sprintf(message, "GET /%s HTTP/1.1\r\nhost:www.foo.com\r\n\r\n","mumbo.html");
-        puts(message);
+        //puts(message);
         //Send some data
-        puts(message);
+        //puts(message);
         if( send(sock , message , strlen(message) , 0) < 0)
         {
             puts("Send failed");
             return 1;
         }
-        puts("message sent\n");
+        //puts("message sent\n");
         //Receive a reply from the server
         if( recv(sock , server_reply , 10000 , 0) < 0)
         {
@@ -64,7 +64,7 @@ int main(int argc , char *argv[])
             //break;
         }
     
-        puts("message received\n");
+        //puts("message received\n");
         puts("Server reply :");
         puts(server_reply);
     
