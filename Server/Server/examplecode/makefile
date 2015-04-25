@@ -1,7 +1,8 @@
 CC=gcc
 
 
-build::clean builp built
+build::clean builp built builq
 builp:;gcc -o eserver server.c
 built:;gcc -o eclient client.c
-clean:;-rm -f *.o core eserver eclient
+builq:;gcc -o mserver multiserver.c
+clean:;-rm -f *.o core eserver eclient mserver
