@@ -9,6 +9,8 @@ what I need to implement :
     3.     modify read so that it reconstructs the request.  where is my output ??
 
 
-Goal: first get output from the remote server back to proxy server than back to local server.
+Goal: first get output from the remote server back to proxy server than back to local server done.
 
-problem : SO THE PROBLEM IS THE REQUEST. what is the differnce ? 
+Problem : the format, I am not sure how to format it in the right way.
+
+          2. single thread, but multiple requests, how do I implement that ? 

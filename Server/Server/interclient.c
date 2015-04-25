@@ -94,7 +94,6 @@ int interclient(char * hostname,int port, char request[],int fd)
     //puts("inside the loop\n");
     //puts("outside the loop\n");
         // over here we need to send this message out back to the real client.
-    
         //}
     //puts("jail break?\n");
     //char client_message[MAXBUF];
