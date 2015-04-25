@@ -19,6 +19,7 @@
 #define MAXBUF   8192  /* Max I/O buffer size */
 int interclient(char * hostname,int port, char request[])
 {
+    printf("*%s*\n",hostname);
     int sock;
     struct hostent *hp;
     struct sockaddr_in server;
