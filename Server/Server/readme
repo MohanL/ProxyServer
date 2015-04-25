@@ -3,7 +3,10 @@ what I have implmented :
     2. a simple echo server that returns whatever he receives.
 
 what I need to implement :
-    2.     modify the request                              done.
-    2.0.5  create new client socket
-    2.1    sends requests to the dest server.
-    3.     modify read so that it reconstructs the request.
+    2.     modify the request                                done.
+    2.0.5  create new client socket                          done
+    2.1    sends requests to the dest server.                done
+    3.     modify read so that it reconstructs the request.  where is my output ??
+
+
+Goal: first get output from the remote server back to proxy server than back to local server.
