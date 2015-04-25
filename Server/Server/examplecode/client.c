@@ -68,6 +68,7 @@ int main(int argc , char *argv[])
         puts("Server reply :");
         puts(server_reply);
     
+        /*
         sprintf(server_reply,"");
         if( recv(sock , server_reply , 10000 , 0) < 0)
         {
@@ -75,7 +76,7 @@ int main(int argc , char *argv[])
             //break;
         }
         puts(server_reply);
-
+         */
    // }
     
     close(sock);
