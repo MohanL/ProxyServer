@@ -17,7 +17,7 @@
 
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
-int interclient(char * hostname,int port, char request[])
+int interclient(char * hostname,int port, char request[],int fd)
 {
     //printf("*%s*\n",hostname);
     int sock;
@@ -93,6 +93,9 @@ int interclient(char * hostname,int port, char request[])
     
         //}
     //puts("jail break?\n");
+    char client_message[MAXBUF];
+    sprintf(client_message, "message from the intermediate client\n");
+    write(fd, client_message , strlen(client_message));
     close(sock);
     return 0;
     
