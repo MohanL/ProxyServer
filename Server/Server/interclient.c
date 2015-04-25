@@ -77,27 +77,22 @@ int interclient(char * hostname,int port, char request[])
         }
     
         puts("request sent \n");
-
+    
+    // consider about the size of the return, what am I going to do ?
         //Receive a reply from the real server
-        if( recv(sock,server_reply , MAXBUF , 0) < 0)
-        {
-            puts("recv failed");
+    puts("Server reply :");
+    while( recv(sock,server_reply , MAXBUF , 0) > 0)
+    {
+            puts(server_reply);
+            sprintf(server_reply,"");
+            //puts("recv failed");
             //break;
-        }
+    }
         
         // over here we need to send this message out back to the real client.
-        
-        puts("Server reply :");
-        puts(server_reply);
-        sprintf(server_reply,"");
-        if( recv(sock,server_reply , MAXBUF , 0) < 0)
-        {
-            puts("recv failed");
-            //break;
-        }
-        puts(server_reply);
+    
         //}
-    puts("jail break?\n");
+    //puts("jail break?\n");
     close(sock);
     return 0;
     
