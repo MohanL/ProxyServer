@@ -18,7 +18,7 @@ int main(int argc , char *argv[])
 {
     int sock;
     struct sockaddr_in server;
-    char message[1000] , server_reply[10000000];
+    char message[1000] , server_reply[10000];
     
     //Create socket
     sock = socket(AF_INET , SOCK_STREAM , 0);
@@ -56,7 +56,7 @@ int main(int argc , char *argv[])
         }
         puts("message sent\n");
         //Receive a reply from the server
-        if( recv(sock , server_reply , 2000 , 0) < 0)
+        if( recv(sock , server_reply , 10000 , 0) < 0)
         {
             puts("recv failed");
             //break;
