@@ -45,9 +45,10 @@ int main(int argc , char *argv[])
     while(1)
     {
         printf("Enter message : ");
-        scanf("%s" , message);
-        
+        //scanf("%s" , message);
+        sprintf(message, "GET /%s\r\n HTTP/1.1\r\nhost:www.cycle1.csug.rochester.edu","home.html");
         //Send some data
+        puts(message);
         if( send(sock , message , strlen(message) , 0) < 0)
         {
             puts("Send failed");
