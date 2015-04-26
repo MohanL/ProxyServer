@@ -59,6 +59,7 @@ void doit(int fd)
 
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+        
         //printf("%s",nbuf);
 
     }
@@ -88,7 +89,15 @@ void doit(int fd)
     
     // at this point we have variable char * server, char nbuf and port = 80
     
-    interclient(server,80,nbuf,fd);
+    char *a;
+    int i = 0;
+    while(nbuf[i]!='\0')
+    {
+        a[i] = nbuf[i];
+        i++;
+    }
+    puts(a);
+    //interclient(server,80,nbuf,fd);
     
     // this line of code doesn't really do anything, does it ?
     //read_requesthdrs(&rio);
