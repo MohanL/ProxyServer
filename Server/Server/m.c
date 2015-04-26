@@ -54,7 +54,7 @@ int main (int argc, char **argv)
     }
      */
     clientlen = sizeof(clientaddr);
-    while ((connfd = accept(listenfd,(void *)&clientaddr,&clientlen))) {
+    while ((connfd = accept(listenfd,(void *)&clientaddr,&clientlen)) > 0) {
         puts("New connection accepted");
         
         pthread_t t;
