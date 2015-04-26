@@ -76,13 +76,11 @@ int interclient(char * hostname,int port, char request[],int fd)
             return 1;
         }
     
-        puts("request sent \n");
-    
-    // consider about the size of the return, what am I going to do ?
-        //Receive a reply from the real server
-    puts("Server reply :");
+        //puts("request sent \n");
+        //puts("Server reply :");
     
     // so here I need a mechanism to repeatively receive message back from remote server, when there is no more stuff, I close it.
+    /*
     if(recv(sock,server_reply , MAXBUF , 0) < 0)
     {
             puts("recv failed");
@@ -90,15 +88,16 @@ int interclient(char * hostname,int port, char request[],int fd)
     }
     
     puts(server_reply);
-    //sprintf(server_reply,"");
-    //puts("inside the loop\n");
-    //puts("outside the loop\n");
-        // over here we need to send this message out back to the real client.
-        //}
-    //puts("jail break?\n");
-    //char client_message[MAXBUF];
-    //sprintf(client_message, "message from the intermediate client\n");
     write(fd, server_reply , sizeof(server_reply));
+     
+     */
+    
+    while (recv(sock,server_reply , MAXBUF , 0) >= 0)
+    {
+        
+        write(fd, server_reply , sizeof(server_reply));
+               //break;
+    }
     close(sock);
     return 0;
     
