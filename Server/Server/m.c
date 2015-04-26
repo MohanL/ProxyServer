@@ -14,7 +14,7 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <unistd.h>
-
+#include <pthread.h>
 #include "open_listenfd.h"
 #include "rio.h"
 #include "doit.h"
