@@ -75,7 +75,7 @@ int interclient(char * hostname,int port, char request[],int fd)
             puts("Send failed");
             return 1;
         }
-    
+    puts(request);
         //puts("request sent \n");
         //puts("Server reply :");
     

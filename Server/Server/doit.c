@@ -59,7 +59,7 @@ void doit(int fd)
 
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
-        printf("%s",nbuf);
+        //printf("%s",nbuf);
 
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
@@ -80,9 +80,9 @@ void doit(int fd)
             sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\n",server);
         //combine the request into (method suburi version\r\n host: server\r\n"
         else
-            sprintf(nbuf,"2.GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         
-        printf("%s",nbuf);
+        //printf("%s",nbuf);
     }
     
     
