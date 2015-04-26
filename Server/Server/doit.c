@@ -40,7 +40,7 @@ void doit(int fd)
         clienterror(fd, method, "501", "NOT IMPLEMENTED", "tiny does not implement this method");
         return;
     }
-    
+    bzero(nbuf,MAXBUF);
     // parse the request and reconstruct
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
