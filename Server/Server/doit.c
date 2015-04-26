@@ -91,7 +91,7 @@ void doit(int fd)
     
     // Segfault
    
-    unsigned long len = strlen(nbuf);
+    unsigned long len = strlen(nbuf)-1;
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
