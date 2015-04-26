@@ -26,4 +26,5 @@ Fixed: for a while, I have been worring about my parse line stuff, today I am go
                       b. dynamic stuff.
                       GET www.foo.com/cgi-bin/adder?1&2 HTTP/1.1        passed
 
-Seems like I fixed it ? testing 
+Problems: could not pass the script test. what is the problem ?
+2nd: the message I received from the real server is not exactly the same I received from telnet protocal.

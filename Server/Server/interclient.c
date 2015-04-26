@@ -74,13 +74,13 @@ int interclient(char * hostname,int port, char request[],int fd)
 // basic function is recv(sock,server_reply , MAXBUF , 0)
 
     bzero(server_reply,MAXBUF);
-    while(recv(sock,server_reply , MAXBUF , 0))
+    while(recv(sock,server_reply , MAXBUF , 0) > 0)
     {
-        //puts(server_reply);
+        puts(server_reply);
         write(fd, server_reply , sizeof(server_reply));
 
-        if(strchr(server_reply, '\0')!=NULL)
-            break;
+        //if(strchr(server_reply, '\0')!=NULL)
+         //   break;
         bzero(server_reply,MAXBUF);
     }
     
