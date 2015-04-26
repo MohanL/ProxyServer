@@ -55,10 +55,10 @@ void doit(int fd)
             
         }
         if(strcmp(suburi, "http:")== 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\n",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
 
         else
-            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
         
         //printf("%s",nbuf);
 
@@ -78,10 +78,10 @@ void doit(int fd)
         }
         
         if(strcmp(suburi, server) == 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\n",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
         //combine the request into (method suburi version\r\n host: server\r\n"
         else
-            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
         
         //printf("%s",nbuf);
     }
@@ -91,12 +91,12 @@ void doit(int fd)
     
     // Segfault
    
-    unsigned long len = strlen(nbuf);
+    unsigned long len = strlen(nbuf)-1;
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
     printf("%s",request);
-    puts("start");
+    puts("REMOTE SERVER OUTPUT");
     //interclient(server,80,request,fd);
     
     
