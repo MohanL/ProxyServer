@@ -95,7 +95,8 @@ void doit(int fd)
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
-    interclient(server,80,request,fd);
+    puts(request);
+    //interclient(server,80,request,fd);
     
     
     
