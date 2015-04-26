@@ -18,7 +18,8 @@
 #include "open_listenfd.h"
 #include "rio.h"
 #include "doit.h"
-
+// thread function
+void *connection_handler(void *);
 
 int main (int argc, char **argv)
 {
@@ -37,6 +38,8 @@ int main (int argc, char **argv)
     // prepare a server socket which is ready to connect to client
     listenfd = open_listenfd(port);
     
+    //  I need to modify this, currently it is not multithreading but iterative.
+    /*
     while(1)
     {
         clientlen = sizeof(clientaddr);
@@ -49,6 +52,42 @@ int main (int argc, char **argv)
         doit(connfd);
         close(connfd);
     }
+     */
+    clientlen = sizeof(clientaddr);
+    while ((connfd = accept(listenfd,(void *)&clientaddr,&clientlen))) {
+        puts("New connection accepted");
+        
+        pthread_t t;
+        int *new_sock = malloc(1);
+        *new_sock = connfd;
+        
+        if(pthread_create(&t,NULL,connection_handler,(void*)new_sock)< 0)
+        {
+            perror("coudld not create thread");
+            return 1;
+        }
+        put("handler assigned");
+    }
+    if(connfd < 0 )
+    {
+        perror("accept failed");
+        return 1;
+    }
+    
+    return 0;
+}
+
+// handler for each connection
+// parameter is the connected socket descriptor
+void * connection_handler(void * socket_in)
+{
+    // get the socket descriptor
+    int sock = *(int *)socket_in;
+    int read_size;
+    char *message, client_message[2000];
+    doit(sock);
+    free(socket_in);
+    return 0;
 }
 
 

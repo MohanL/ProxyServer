@@ -54,10 +54,7 @@ int main(int argc , char *argv[])
     puts("Waiting for incoming connections...");
     c = sizeof(struct sockaddr_in);
     
-    
-    //Accept and incoming connection
-    puts("Waiting for incoming connections...");
-    c = sizeof(struct sockaddr_in);
+    // for this mutilthreading server, it creates connected client socket form each incoming connections.
     while( (client_sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&c)) )
     {
         puts("Connection accepted");

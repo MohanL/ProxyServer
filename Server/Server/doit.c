@@ -23,10 +23,10 @@
 #define LISTENQ  1024  /* Second argument to listen() */
 void doit(int fd)
 {
-    int is_static;
-    struct stat sbuf;
+    //int is_static;
+    //struct stat sbuf;
     char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[MAXLINE];
-    char filename[MAXLINE], cgiargs[MAXLINE];
+    //char filename[MAXLINE], cgiargs[MAXLINE];
     rio_t rio;
     
     char * server, *p, *suburi;
@@ -41,12 +41,7 @@ void doit(int fd)
         return;
     }
     
-    // here I need to split the uri into two : server and suburi
-    
-     //printf("parsing request ********************\n");
-    
-    
-    // so nbuf is the new request that we are going to send to the dest server.
+    // parse the request and reconstruct
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         p = strtok(uri, "/");
@@ -64,7 +59,7 @@ void doit(int fd)
 
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
-        printf("%s",nbuf);
+       //printf("%s",nbuf);
 
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
@@ -87,13 +82,10 @@ void doit(int fd)
         else
             sprintf(nbuf,"2.GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
         
-        printf("%s",nbuf);
+       // printf("%s",nbuf);
     }
     
     
-    //printf("the request:\n%s\n",nbuf);
-    //sprintf(nbuf, "GET /%s HTTP/1.1\r\nhost:www.foo.com\r\n\r\n","mumbo.html");
-    //printf("parsing request finished********************\n");
     // at this point we have variable char * server, char nbuf and port = 80
     
     //interclient(server,80,nbuf,fd);
