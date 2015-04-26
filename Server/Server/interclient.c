@@ -73,6 +73,7 @@ int interclient(char * hostname,int port, char request[],int fd)
 // here is the part I need to modify about receiving the feedback from the server and print them out
 // basic function is recv(sock,server_reply , MAXBUF , 0)
 
+    bzero(server_reply,MAXBUF);
     while(recv(sock,server_reply , MAXBUF , 0))
     {
         puts(server_reply);
@@ -81,6 +82,7 @@ int interclient(char * hostname,int port, char request[],int fd)
             break;
         else
             write(fd, server_reply , sizeof(server_reply));
+        bzero(server_reply,MAXBUF);
     }
     close(sock);
     return 0;
