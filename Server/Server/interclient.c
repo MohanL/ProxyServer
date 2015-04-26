@@ -63,20 +63,12 @@ int interclient(char * hostname,int port, char request[],int fd)
     printf("intermediate connection successful\n");
     
     //going to send the server things that real client send to this server
-    
-    // over here the design is that this sock should exist until the real client is gone.
-    //while(1)
-    //{
-        //Send the modified request to the real server
-        //puts(request);
-    puts("Request send to server");
-    puts(request);
-        if( send(sock,request, MAXBUF , 0) < 0)
-        {
+    if( send(sock,request, MAXBUF , 0) < 0)
+    {
             puts("Send failed");
             return 1;
-        }
-        puts(request);
+    }
+    //puts(request);
     
 // here is the part I need to modify about receiving the feedback from the server and print them out
 // basic function is recv(sock,server_reply , MAXBUF , 0)
@@ -88,6 +80,7 @@ int interclient(char * hostname,int port, char request[],int fd)
             break;
     }
     close(sock);
+    puts("ckpt1");
     return 0;
     
 }
