@@ -99,6 +99,7 @@ int interclient(char * hostname,int port, char request[],int fd)
         //write(fd, server_reply , sizeof(server_reply));
                //break;
     }
+    puts(server_reply);
     close(sock);
     return 0;
     
