@@ -26,7 +26,4 @@ Fixed: for a while, I have been worring about my parse line stuff, today I am go
                       b. dynamic stuff.
                       GET www.foo.com/cgi-bin/adder?1&2 HTTP/1.1        passed
 
-THE last problem I need to solve is : send back the real client the stuff.
-before that I need to make sure the stuff in the proxy server.
-Seems like there is another problem which is closing the connected server socket after send back the stuff.
-parse ^] ? and close it ?
+Seems like I fixed it ? testing 
