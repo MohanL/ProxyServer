@@ -88,6 +88,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		016237F31AED85F50031F752 /* project */ = {
+			isa = PBXGroup;
+			children = (
+				01C142AC1AE755B30094B614 /* open_listenfd.c */,
+				01C142AD1AE755B30094B614 /* open_listenfd.h */,
+				01F72C791AE8B5B000599320 /* doit.c */,
+				01F72C7A1AE8B5B000599320 /* doit.h */,
+				01F72C691AE8B2B100599320 /* readme */,
+				01F72C801AE8BCA700599320 /* makefile */,
+				01DCF6EA1AE8683600232206 /* m.c */,
+				01FAC2261AEB323800966384 /* interclient */,
+			);
+			name = project;
+			sourceTree = "<group>";
+		};
+		016237F41AED86360031F752 /* related */ = {
+			isa = PBXGroup;
+			children = (
+				01F72C731AE8B53300599320 /* clienterror.c */,
+				01F72C741AE8B53300599320 /* clienterror.h */,
+				01F72C701AE8B4B200599320 /* read.c */,
+				01F72C711AE8B4B200599320 /* read.h */,
+				01F72C6A1AE8B36900599320 /* parse_uri.c */,
+				01F72C6B1AE8B36900599320 /* parse_uri.h */,
+				01F72C6D1AE8B3DF00599320 /* serve.c */,
+				01F72C6E1AE8B3DF00599320 /* serve.h */,
+				01F72C761AE8B58100599320 /* getfiletype.c */,
+				01F72C771AE8B58100599320 /* getfiletype.h */,
+				01909F9C1AE98AB3003B72D6 /* echotest.sh */,
+				01909F9D1AE99575003B72D6 /* stest.sh */,
+			);
+			name = related;
+			sourceTree = "<group>";
+		};
 		01C1428B1AE753E30094B614 = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +155,6 @@
 				01C142B01AE7567A0094B614 /* rio.h */,
 				01C1429E1AE754840094B614 /* client.c */,
 				01C1429F1AE754840094B614 /* client.h */,
-				01C142AC1AE755B30094B614 /* open_listenfd.c */,
-				01C142AD1AE755B30094B614 /* open_listenfd.h */,
 				01C142B21AE82CDB0094B614 /* echo.c */,
 				01C142B31AE82CDB0094B614 /* echo.h */,
 				01909F9A1AE977DD003B72D6 /* iecho.c */,
@@ -134,24 +166,8 @@
 		01DCF6E91AE8681E00232206 /* tiny server */ = {
 			isa = PBXGroup;
 			children = (
-				01FAC2261AEB323800966384 /* interclient */,
-				01DCF6EA1AE8683600232206 /* m.c */,
-				01F72C731AE8B53300599320 /* clienterror.c */,
-				01F72C741AE8B53300599320 /* clienterror.h */,
-				01F72C701AE8B4B200599320 /* read.c */,
-				01F72C711AE8B4B200599320 /* read.h */,
-				01F72C791AE8B5B000599320 /* doit.c */,
-				01F72C7A1AE8B5B000599320 /* doit.h */,
-				01F72C6A1AE8B36900599320 /* parse_uri.c */,
-				01F72C6B1AE8B36900599320 /* parse_uri.h */,
-				01F72C6D1AE8B3DF00599320 /* serve.c */,
-				01F72C6E1AE8B3DF00599320 /* serve.h */,
-				01F72C691AE8B2B100599320 /* readme */,
-				01F72C801AE8BCA700599320 /* makefile */,
-				01F72C761AE8B58100599320 /* getfiletype.c */,
-				01F72C771AE8B58100599320 /* getfiletype.h */,
-				01909F9C1AE98AB3003B72D6 /* echotest.sh */,
-				01909F9D1AE99575003B72D6 /* stest.sh */,
+				016237F31AED85F50031F752 /* project */,
+				016237F41AED86360031F752 /* related */,
 			);
 			name = "tiny server";
 			sourceTree = "<group>";

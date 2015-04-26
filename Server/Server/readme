@@ -29,4 +29,4 @@ Fixed: for a while, I have been worring about my parse line stuff, today I am go
 THE last problem I need to solve is : send back the real client the stuff.
 before that I need to make sure the stuff in the proxy server.
 Seems like there is another problem which is closing the connected server socket after send back the stuff.
-parse ^] ? and close it ? 
+parse ^] ? and close it ?
