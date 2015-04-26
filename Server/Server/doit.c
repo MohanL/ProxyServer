@@ -88,7 +88,7 @@ void doit(int fd)
     
     // at this point we have variable char * server, char nbuf and port = 80
     
-    //interclient(server,80,nbuf,fd);
+    interclient(server,80,nbuf,fd);
     
     // this line of code doesn't really do anything, does it ?
     //read_requesthdrs(&rio);
