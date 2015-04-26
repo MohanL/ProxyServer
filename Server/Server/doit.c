@@ -96,6 +96,7 @@ void doit(int fd)
     bzero(request, len);
     strncpy(request, nbuf, len);
     puts(request);
+    puts("sdfa");
     //interclient(server,80,request,fd);
     
     
