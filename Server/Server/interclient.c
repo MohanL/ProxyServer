@@ -14,6 +14,7 @@
 #include<arpa/inet.h> //inet_addr
 #include<netdb.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
@@ -75,7 +76,7 @@ int interclient(char * hostname,int port, char request[],int fd)
             puts("Send failed");
             return 1;
         }
-    puts(request);
+        puts(request);
         //puts("request sent \n");
         //puts("Server reply :");
     
@@ -92,12 +93,18 @@ int interclient(char * hostname,int port, char request[],int fd)
      
      */
     
-    while (recv(sock,server_reply , MAXBUF , 0) >= 0)
+    char t[MAXBUF];
+    
+    if(recv(sock,server_reply, MAXBUF , 0) < 0)
     {
-        puts(server_reply);
-        strcpy(server_reply,"");
+        // So trouble shooting: the problem is on the char string.
         //write(fd, server_reply , sizeof(server_reply));
-               //break;
+        //break;
+        return -1;
+    }
+    while (recv(sock,t, MAXBUF , 0)) {
+        realloc(server_reply,sizeof(server_reply)+MAXBUF);
+        strcat(server_reply, t);
     }
     puts(server_reply);
     close(sock);
