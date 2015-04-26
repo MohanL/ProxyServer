@@ -27,5 +27,4 @@ Fixed: for a while, I have been worring about my parse line stuff, today I am go
                       GET www.foo.com/cgi-bin/adder?1&2 HTTP/1.1        passed
 
 Concern: chunked transfer coding. I have never actually test it on really large websites. only small ones like www.foo.com
-
-current progress :  multithreading.
+so what is left is about processing the message received from the remote server and (process itside in the proxy server) and send them back 
