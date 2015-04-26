@@ -94,8 +94,8 @@ int interclient(char * hostname,int port, char request[],int fd)
     
     while (recv(sock,server_reply , MAXBUF , 0) >= 0)
     {
-        
-        write(fd, server_reply , sizeof(server_reply));
+        puts(server_reply);
+        //write(fd, server_reply , sizeof(server_reply));
                //break;
     }
     close(sock);
