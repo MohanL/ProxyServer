@@ -69,8 +69,8 @@ int interclient(char * hostname,int port, char request[],int fd)
     //{
         //Send the modified request to the real server
         //puts(request);
-    
-    
+    puts("Request send to server");
+    puts(request);
         if( send(sock,request, MAXBUF , 0) < 0)
         {
             puts("Send failed");
