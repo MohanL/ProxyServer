@@ -89,15 +89,15 @@ void doit(int fd)
     
     // at this point we have variable char * server, char nbuf and port = 80
     
-    char *a;
-    int i = 0;
-    while(nbuf[i]!='\0')
-    {
-        a[i] = nbuf[i];
-        i++;
-    }
-    puts(a);
-    //interclient(server,80,nbuf,fd);
+    // Segfault
+   
+    unsigned long len = strlen(nbuf);
+    char request[len+1];
+    bzero(request, len+1);
+    strncpy(request, nbuf, len);
+    interclient(server,80,request,fd);
+    
+    
     
     // this line of code doesn't really do anything, does it ?
     //read_requesthdrs(&rio);
