@@ -55,10 +55,10 @@ void doit(int fd)
             
         }
         if(strcmp(suburi, "http:")== 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\n",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r",server);
 
         else
-            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r",suburi,server);
         //printf("%s",nbuf);
 
     }
@@ -77,10 +77,10 @@ void doit(int fd)
         }
         
         if(strcmp(suburi, server) == 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\n",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r",server);
         //combine the request into (method suburi version\r\n host: server\r\n"
         else
-            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\n",suburi,server);
+            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r",suburi,server);
         
         //printf("%s",nbuf);
     }
