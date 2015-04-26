@@ -76,15 +76,12 @@ int main (int argc, char **argv)
     
     return 0;
 }
-
 // handler for each connection
 // parameter is the connected socket descriptor
 void * connection_handler(void * socket_in)
 {
     // get the socket descriptor
     int sock = *(int *)socket_in;
-    int read_size;
-    char *message, client_message[2000];
     doit(sock);
     free(socket_in);
     return 0;
