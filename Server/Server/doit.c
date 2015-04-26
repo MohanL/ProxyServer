@@ -92,8 +92,8 @@ void doit(int fd)
     // Segfault
    
     unsigned long len = strlen(nbuf);
-    char request[len+1];
-    bzero(request, len+1);
+    char request[len];
+    bzero(request, len);
     strncpy(request, nbuf, len);
     interclient(server,80,request,fd);
     
