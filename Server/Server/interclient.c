@@ -94,7 +94,7 @@ int interclient(char * hostname,int port, char request[],int fd)
      */
     
     char t[MAXBUF];
-    
+    char * ret;
     if(recv(sock,server_reply, MAXBUF , 0) < 0)
     {
         // So trouble shooting: the problem is on the char string.
@@ -103,10 +103,10 @@ int interclient(char * hostname,int port, char request[],int fd)
         return -1;
     }
     while (recv(sock,t, MAXBUF , 0)) {
-        realloc(server_reply,sizeof(server_reply)+MAXBUF);
+        ret= realloc(server_reply,sizeof(server_reply)+MAXBUF);
         strcat(server_reply, t);
     }
-    puts(server_reply);
+    puts(ret);
     close(sock);
     return 0;
     
