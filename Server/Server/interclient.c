@@ -77,37 +77,37 @@ int interclient(char * hostname,int port, char request[],int fd)
             return 1;
         }
         puts(request);
-        //puts("request sent \n");
-        //puts("Server reply :");
     
-    // so here I need a mechanism to repeatively receive message back from remote server, when there is no more stuff, I close it.
-    /*
-    if(recv(sock,server_reply , MAXBUF , 0) < 0)
+// here is the part I need to modify about receiving the feedback from the server and print them out
+// basic function is recv(sock,server_reply , MAXBUF , 0)
+
+    while(recv(sock,server_reply , MAXBUF , 0))
     {
-            puts("recv failed");
-            //break;
+        puts(server_reply);
+        if(strchr(server_reply, '\0')!=NULL)
+            break;
     }
-    
-    puts(server_reply);
-    write(fd, server_reply , sizeof(server_reply));
-     
-     */
-    
-    char t[MAXBUF];
-    char * ret;
-   // if(recv(sock,server_reply, MAXBUF , 0) < 0)
-   // {
-        // So trouble shooting: the problem is on the char string.
-        //write(fd, server_reply , sizeof(server_reply));
-        //break;
-     //   return -1;
-   // }
-   // while (recv(sock,t, MAXBUF , 0)) {
-    //    ret= realloc(server_reply,sizeof(server_reply)+MAXBUF);
-    //    strcat(server_reply, t);
-   // }
-   // puts(ret);
     close(sock);
     return 0;
     
 }
+
+/*
+  if(recv(sock,server_reply, MAXBUF , 0) < 0)
+  {
+ // So trouble shooting: the problem is on the char string.
+    write(fd, server_reply , sizeof(server_reply));
+    break;
+    return -1;
+  }
+  while (recv(sock,t, MAXBUF , 0)) {
+     ret= realloc(server_reply,sizeof(server_reply)+MAXBUF);
+     strcat(server_reply, t);
+  }
+ puts(ret);    puts(server_reply);
+ write(fd, server_reply , sizeof(server_reply));
+ 
+ 
+ char t[MAXBUF];
+ char * ret;
+*/
