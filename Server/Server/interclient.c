@@ -83,6 +83,7 @@ int interclient(char * hostname,int port, char request[],int fd)
             break;
         bzero(server_reply,MAXBUF);
     }
+    puts("\r\n");
     close(sock);
     return 0;
     
