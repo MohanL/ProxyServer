@@ -85,7 +85,7 @@ void doit(int fd)
     bzero(request, len);
     strncpy(request, nbuf, len);
     printf("%s",request);
-    puts("REMOTE SERVER OUTPUT");
+    //puts("REMOTE SERVER OUTPUT");
     interclient(server,80,request,fd);
     
     

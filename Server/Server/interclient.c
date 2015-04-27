@@ -60,7 +60,7 @@ int interclient(char * hostname,int port, char request[],int fd)
         return -1;
     }
     
-    printf("intermediate connection successful\n");
+    //printf("intermediate connection successful\n");
     
     //going to send the server things that real client send to this server
     if( send(sock,request, MAXBUF , 0) < 0)
@@ -76,7 +76,7 @@ int interclient(char * hostname,int port, char request[],int fd)
     bzero(server_reply,MAXBUF);
     while(recv(sock,server_reply , MAXBUF , 0) > 0)
     {
-        puts(server_reply);
+        //puts(server_reply);
         write(fd, server_reply , sizeof(server_reply));
 
         //if(strchr(server_reply, '\0')!=NULL)
