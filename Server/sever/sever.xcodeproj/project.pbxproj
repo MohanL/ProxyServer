@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		016DF9B91AEE022A00A98173 /* doit.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9B01AEE022A00A98173 /* doit.c */; };
-		016DF9BA1AEE022A00A98173 /* interclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9B21AEE022A00A98173 /* interclient.c */; };
-		016DF9BC1AEE022A00A98173 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9B51AEE022A00A98173 /* makefile */; };
-		016DF9BD1AEE022A00A98173 /* open_listenfd.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9B61AEE022A00A98173 /* open_listenfd.c */; };
-		016DF9C01AEE02B200A98173 /* rio.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9BE1AEE02B200A98173 /* rio.c */; };
-		016DF9C21AEE033C00A98173 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C11AEE033C00A98173 /* main.c */; };
+		016DF9CE1AEE044500A98173 /* doit.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C31AEE044500A98173 /* doit.c */; };
+		016DF9CF1AEE044500A98173 /* interclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C51AEE044500A98173 /* interclient.c */; };
+		016DF9D01AEE044500A98173 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C71AEE044500A98173 /* main.c */; };
+		016DF9D11AEE044500A98173 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C81AEE044500A98173 /* makefile */; };
+		016DF9D21AEE044500A98173 /* open_listenfd.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C91AEE044500A98173 /* open_listenfd.c */; };
+		016DF9D31AEE044500A98173 /* rio.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9CC1AEE044500A98173 /* rio.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,17 +29,17 @@
 
 /* Begin PBXFileReference section */
 		016DF99C1AEE01E500A98173 /* sever */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sever; sourceTree = BUILT_PRODUCTS_DIR; };
-		016DF9B01AEE022A00A98173 /* doit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = doit.c; path = "../../../../../../../../../Desktop/CS252-A5/doit.c"; sourceTree = "<group>"; };
-		016DF9B11AEE022A00A98173 /* doit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = doit.h; path = "../../../../../../../../../Desktop/CS252-A5/doit.h"; sourceTree = "<group>"; };
-		016DF9B21AEE022A00A98173 /* interclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = interclient.c; path = "../../../../../../../../../Desktop/CS252-A5/interclient.c"; sourceTree = "<group>"; };
-		016DF9B31AEE022A00A98173 /* interclient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = interclient.h; path = "../../../../../../../../../Desktop/CS252-A5/interclient.h"; sourceTree = "<group>"; };
-		016DF9B51AEE022A00A98173 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = makefile; path = "../../../../../../../../../Desktop/CS252-A5/makefile"; sourceTree = "<group>"; };
-		016DF9B61AEE022A00A98173 /* open_listenfd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = open_listenfd.c; path = "../../../../../../../../../Desktop/CS252-A5/open_listenfd.c"; sourceTree = "<group>"; };
-		016DF9B71AEE022A00A98173 /* open_listenfd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = open_listenfd.h; path = "../../../../../../../../../Desktop/CS252-A5/open_listenfd.h"; sourceTree = "<group>"; };
-		016DF9B81AEE022A00A98173 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme; path = "../../../../../../../../../Desktop/CS252-A5/readme"; sourceTree = "<group>"; };
-		016DF9BE1AEE02B200A98173 /* rio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rio.c; path = "../../../../../../../../../Desktop/CS252-A5/rio.c"; sourceTree = "<group>"; };
-		016DF9BF1AEE02B200A98173 /* rio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rio.h; path = "../../../../../../../../../Desktop/CS252-A5/rio.h"; sourceTree = "<group>"; };
-		016DF9C11AEE033C00A98173 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "../../../../../../../../../Desktop/CS252-A5/main.c"; sourceTree = "<group>"; };
+		016DF9C31AEE044500A98173 /* doit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = doit.c; path = compact/doit.c; sourceTree = SOURCE_ROOT; };
+		016DF9C41AEE044500A98173 /* doit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = doit.h; path = compact/doit.h; sourceTree = SOURCE_ROOT; };
+		016DF9C51AEE044500A98173 /* interclient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = interclient.c; path = compact/interclient.c; sourceTree = SOURCE_ROOT; };
+		016DF9C61AEE044500A98173 /* interclient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = interclient.h; path = compact/interclient.h; sourceTree = SOURCE_ROOT; };
+		016DF9C71AEE044500A98173 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = compact/main.c; sourceTree = SOURCE_ROOT; };
+		016DF9C81AEE044500A98173 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = makefile; path = compact/makefile; sourceTree = SOURCE_ROOT; };
+		016DF9C91AEE044500A98173 /* open_listenfd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = open_listenfd.c; path = compact/open_listenfd.c; sourceTree = SOURCE_ROOT; };
+		016DF9CA1AEE044500A98173 /* open_listenfd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = open_listenfd.h; path = compact/open_listenfd.h; sourceTree = SOURCE_ROOT; };
+		016DF9CB1AEE044500A98173 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme; path = compact/readme; sourceTree = SOURCE_ROOT; };
+		016DF9CC1AEE044500A98173 /* rio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rio.c; path = compact/rio.c; sourceTree = SOURCE_ROOT; };
+		016DF9CD1AEE044500A98173 /* rio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rio.h; path = compact/rio.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +72,17 @@
 		016DF99E1AEE01E500A98173 /* compactsever */ = {
 			isa = PBXGroup;
 			children = (
-				016DF9C11AEE033C00A98173 /* main.c */,
-				016DF9BE1AEE02B200A98173 /* rio.c */,
-				016DF9BF1AEE02B200A98173 /* rio.h */,
-				016DF9B01AEE022A00A98173 /* doit.c */,
-				016DF9B11AEE022A00A98173 /* doit.h */,
-				016DF9B21AEE022A00A98173 /* interclient.c */,
-				016DF9B31AEE022A00A98173 /* interclient.h */,
-				016DF9B51AEE022A00A98173 /* makefile */,
-				016DF9B61AEE022A00A98173 /* open_listenfd.c */,
-				016DF9B71AEE022A00A98173 /* open_listenfd.h */,
-				016DF9B81AEE022A00A98173 /* readme */,
+				016DF9C31AEE044500A98173 /* doit.c */,
+				016DF9C41AEE044500A98173 /* doit.h */,
+				016DF9C51AEE044500A98173 /* interclient.c */,
+				016DF9C61AEE044500A98173 /* interclient.h */,
+				016DF9C71AEE044500A98173 /* main.c */,
+				016DF9C81AEE044500A98173 /* makefile */,
+				016DF9C91AEE044500A98173 /* open_listenfd.c */,
+				016DF9CA1AEE044500A98173 /* open_listenfd.h */,
+				016DF9CB1AEE044500A98173 /* readme */,
+				016DF9CC1AEE044500A98173 /* rio.c */,
+				016DF9CD1AEE044500A98173 /* rio.h */,
 			);
 			name = compactsever;
 			path = sever;
@@ -144,12 +144,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				016DF9C01AEE02B200A98173 /* rio.c in Sources */,
-				016DF9BD1AEE022A00A98173 /* open_listenfd.c in Sources */,
-				016DF9B91AEE022A00A98173 /* doit.c in Sources */,
-				016DF9BC1AEE022A00A98173 /* makefile in Sources */,
-				016DF9BA1AEE022A00A98173 /* interclient.c in Sources */,
-				016DF9C21AEE033C00A98173 /* main.c in Sources */,
+				016DF9D31AEE044500A98173 /* rio.c in Sources */,
+				016DF9D21AEE044500A98173 /* open_listenfd.c in Sources */,
+				016DF9CE1AEE044500A98173 /* doit.c in Sources */,
+				016DF9CF1AEE044500A98173 /* interclient.c in Sources */,
+				016DF9D11AEE044500A98173 /* makefile in Sources */,
+				016DF9D01AEE044500A98173 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
