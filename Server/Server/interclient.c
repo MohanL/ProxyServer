@@ -85,7 +85,6 @@ int interclient(char * hostname,int port, char request[],int fd)
             recv(sock,server_reply,MAXBUF,0);
         }
         write(fd, server_reply , strlen(server_reply)-2);
-        write(fd, "end",4);
     }	    
     else{ //100%
 	puts("normal encoding");
