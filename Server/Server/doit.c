@@ -42,47 +42,36 @@ void doit(int fd)
     }
     bzero(nbuf,MAXBUF);
     // parse the request and reconstruct
-    
     // trouble shooting: suburi is not parsed correctly.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         p = strtok(uri, "/");
         server = strtok (NULL, "/");
-        suburi = p;
-        while (p != NULL)
-        {
+        suburi = strtok(NULL,"/");
+       /* while (p != NULL){
             suburi = p;
             p= strtok (NULL, "/");
-            
-        }
+           }
+        */
         if(strcmp(suburi, "http:")== 0)
             sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
-
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
-        
-
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         p = strtok(uri, "/");
         server = p;
         suburi = p;
-        while (p != NULL)
-        {
+        while (p != NULL){
             suburi = p;
             p= strtok (NULL, "/");
-            
         }
-        
         if(strcmp(suburi, server) == 0)
             sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
-        
     }
-    
-    
     // at this point we have variable char * server, char nbuf and port = 80
     
     puts(nbuf);
