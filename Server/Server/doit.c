@@ -42,6 +42,8 @@ void doit(int fd)
     }
     bzero(nbuf,MAXBUF);
     // parse the request and reconstruct
+    
+    // trouble shooting: suburi is not parsed correctly.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
         p = strtok(uri, "/");

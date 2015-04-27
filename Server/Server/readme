@@ -28,3 +28,5 @@ Fixed: for a while, I have been worring about my parse line stuff, today I am go
 
 Problems: could not pass the script test. what is the problem ?
 2nd: the message I received from the real server is not exactly the same I received from telnet protocal.
+
+test: http://cs.rochester.edu/u/hedayati/csc252/lorem.html failed, uri is not parsed correctly.

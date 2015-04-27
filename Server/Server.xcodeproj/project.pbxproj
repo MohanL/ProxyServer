@@ -46,6 +46,7 @@
 		01909F9A1AE977DD003B72D6 /* iecho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iecho.c; sourceTree = "<group>"; };
 		01909F9C1AE98AB3003B72D6 /* echotest.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = echotest.sh; sourceTree = "<group>"; };
 		01909F9D1AE99575003B72D6 /* stest.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = stest.sh; sourceTree = "<group>"; };
+		0190E2381AEDB39100AC6A66 /* proxy-test.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = "proxy-test.py"; path = "../../proxy-test.py"; sourceTree = "<group>"; };
 		01C142941AE753E30094B614 /* Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Server; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C1429E1AE754840094B614 /* client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = client.c; sourceTree = "<group>"; };
 		01C1429F1AE754840094B614 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		016237F31AED85F50031F752 /* project */ = {
 			isa = PBXGroup;
 			children = (
+				0190E2381AEDB39100AC6A66 /* proxy-test.py */,
 				01C142AC1AE755B30094B614 /* open_listenfd.c */,
 				01C142AD1AE755B30094B614 /* open_listenfd.h */,
 				01F72C791AE8B5B000599320 /* doit.c */,
