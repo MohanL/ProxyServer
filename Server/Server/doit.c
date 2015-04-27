@@ -58,9 +58,9 @@ void doit(int fd)
             suburi = p;
         }
         if(strcmp(suburi, "http:")== 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%sa\r\nb\r\n",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%sa\r\nb\r\nc",server);
         else
-            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\n",a,server);
+            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\nc",a,server);
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
@@ -75,12 +75,12 @@ void doit(int fd)
             suburi = p;
         }
         if(strcmp(suburi, server) == 0)
-            sprintf(nbuf,"GET home.html HTTP/1.1\r\nhost:%sa\r\nb\r\n",server);
+            sprintf(nbuf,"GET home.html HTTP/1.1\r\nhost:%sa\r\nb\r\nc",server);
         else
-            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\n",a,server);
+            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\nc",a,server);
     }
 
-    unsigned long len = strlen(nbuf)+1;
+    unsigned long len = strlen(nbuf);
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
