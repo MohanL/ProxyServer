@@ -85,6 +85,10 @@ void doit(int fd)
     bzero(request, len);
     strncpy(request, nbuf, len);
     printf("%s",request);
+    if(strcmp(request,"GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n"))
+        puts("yeah they are the same");
+    else
+        puts("nope");
     interclient(server,80,request,fd);
     
     
