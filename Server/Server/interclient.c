@@ -74,19 +74,35 @@ int interclient(char * hostname,int port, char request[],int fd)
 // basic function is recv(sock,server_reply , MAXBUF , 0)
 
     bzero(server_reply,MAXBUF);
-    while(recv(sock,server_reply , MAXBUF , 0) > 0)
+    recv(sock,server_reply,MAXBUF,0);
+    if(strstr(server_reply,"chunked"))
     {
-        //puts(server_reply);
+	puts("we are working on chunked transfer encoding"); 
         write(fd, server_reply , sizeof(server_reply));
-
-        //if(strchr(server_reply, '\0')!=NULL)
-         //   break;
+    	while(!strstr(server_reply,"0\r\n\r\n"))
+	{	
+        	write(fd, server_reply , sizeof(server_reply));
+    		bzero(server_reply,MAXBUF);
+		recv(sock,server_reply,MAXBUF,0);	
+	}
+        write(fd, server_reply , sizeof(server_reply));
+    }	    
+    else{
+	puts("normal encoding");
+        write(fd, server_reply , sizeof(server_reply));
         bzero(server_reply,MAXBUF);
+    	while(recv(sock,server_reply , MAXBUF , 0) > 0)
+    	{
+        	//puts(server_reply);
+        	write(fd, server_reply , sizeof(server_reply));
+
+        	//if(strchr(server_reply, '\0')!=NULL)
+         	//   break;
+        	bzero(server_reply,MAXBUF);
+    	}
+    	const char end[] = "\r\n";
+    	write(fd, end, sizeof(end));
     }
-    
-    const char end[] = "\r\n";
-    write(fd, end, sizeof(end));
-    
     close(sock);
     return 0;
     
