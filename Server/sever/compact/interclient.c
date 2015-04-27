@@ -40,7 +40,7 @@ int interclient(char * hostname,int port, char request[],int fd)
         return -2;// can't get correct Domain name from the DNS system
     }
     
-    //configure the server
+    // configure the server
     bzero((char *)&server,sizeof(server));
     
     //copy the first IP address in the host entry (which is already in network byte order) to the server’s socket address structure
@@ -58,7 +58,7 @@ int interclient(char * hostname,int port, char request[],int fd)
         return -1;
     }
     
-    printf("intermediate connection successful\n");
+    //printf("intermediate connection successful\n");
     
     //going to send the server things that real client send to this server
     if( send(sock,request, MAXBUF , 0) < 0)
@@ -66,21 +66,32 @@ int interclient(char * hostname,int port, char request[],int fd)
             puts("Send failed");
             return 1;
     }
-    
     bzero(server_reply,MAXBUF);
-    while(recv(sock,server_reply , MAXBUF , 0) > 0)
+    recv(sock,server_reply,MAXBUF,0);
+    if(strstr(server_reply,"chunked"))
     {
-        puts(server_reply);
+        puts("we are working on chunked transfer encoding");
+        while(!strstr(server_reply,"0\r\n\r\n"))
+        {
+        	write(fd, server_reply , sizeof(server_reply));
+    		bzero(server_reply,MAXBUF);
+            recv(sock,server_reply,MAXBUF,0);
+        }
+        write(fd, server_reply , strlen(server_reply)-4);
+    }	    
+    else{ //100%
+        puts("normal encoding");
         write(fd, server_reply , sizeof(server_reply));
-
-        //if(strchr(server_reply, '\0')!=NULL)
-         //   break;
         bzero(server_reply,MAXBUF);
+    	while(recv(sock,server_reply , MAXBUF , 0) > 0)
+    	{
+        	
+        	write(fd, server_reply , sizeof(server_reply));
+        	bzero(server_reply,MAXBUF);
+    	}
+    	const char end[] = "\r\n";
+    	write(fd, end, sizeof(end));
     }
-    
-    const char end[] = "\r\n";
-    write(fd, end, sizeof(end));
-    
     close(sock);
     return 0;
     

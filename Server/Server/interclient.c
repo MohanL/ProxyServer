@@ -77,7 +77,7 @@ int interclient(char * hostname,int port, char request[],int fd)
     recv(sock,server_reply,MAXBUF,0);
     if(strstr(server_reply,"chunked"))
     {
-	puts("we are working on chunked transfer encoding"); 
+        puts("we are working on chunked transfer encoding");
         while(!strstr(server_reply,"0\r\n\r\n"))
         {
         	write(fd, server_reply , sizeof(server_reply));
@@ -87,7 +87,7 @@ int interclient(char * hostname,int port, char request[],int fd)
         write(fd, server_reply , strlen(server_reply)-4);
     }	    
     else{ //100%
-	puts("normal encoding");
+        puts("normal encoding");
         write(fd, server_reply , sizeof(server_reply));
         bzero(server_reply,MAXBUF);
     	while(recv(sock,server_reply , MAXBUF , 0) > 0)
