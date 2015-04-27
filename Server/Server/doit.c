@@ -94,8 +94,8 @@ void doit(int fd)
         char b[a];
         strcpy(b, "GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n");
         
-        puts(strlen(request));
-        puts(strlen(b));
+        printf("%lu",strlen(request));
+        printf("%lu",strlen(b));
         
     }
     
