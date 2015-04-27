@@ -15,7 +15,7 @@ GET /mumbo.html HTTP/1.1
 host:www.foo.com
 
 Problems :
-I parsed the URI in a wrong way.
-for example
-www.abc.com/a/d/c.html would be parsed as www.abc/c.html.
-it is because I used a while loop. I should use two function calls to fix it.
+the chunked output is the same maybe one extra \r\n ?
+basical functionalities aredone and tested.
+
+could not pass the concurrent test from the python script. manully tested it, it works.
