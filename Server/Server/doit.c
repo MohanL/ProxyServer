@@ -45,7 +45,7 @@ void doit(int fd)
     // trouble shooting: suburi is not parsed correctly.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
-        puts("case1");
+        //puts("case1");
         p = strtok(uri, "/");
         server = strtok (NULL, "/");
         suburi = p;
@@ -54,7 +54,7 @@ void doit(int fd)
         while ((p=strtok(NULL, "/"))!= NULL){
             strcat(a,"/");
             strcat(a, p);
-            puts(a);
+            //puts(a);
             suburi = p;
         }
         if(strcmp(suburi, "http:")== 0)
@@ -64,7 +64,7 @@ void doit(int fd)
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
-        puts("case2");
+        //puts("case2");
         p = strtok(uri, "/");
         suburi = p;
         server = p;
