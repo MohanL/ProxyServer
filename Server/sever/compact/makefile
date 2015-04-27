@@ -13,7 +13,7 @@ rebuild::clean build
 open_listenfd.o: open_listenfd.c
 rio.o: rio.c rio.h
 interclient.o : interclient.c interclient.h
-
+clienterror.o : clienterror.c clienterror.h rio.c rio.h
 doit.o: doit.h doit.c rio.h rio.c interclient.c interclient.h
 
 main.o: open_listenfd.h open_listenfd.c rio.h rio.c doit.h doit.c

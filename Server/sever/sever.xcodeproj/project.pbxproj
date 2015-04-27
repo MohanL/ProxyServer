@@ -13,6 +13,7 @@
 		016DF9D11AEE044500A98173 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C81AEE044500A98173 /* makefile */; };
 		016DF9D21AEE044500A98173 /* open_listenfd.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9C91AEE044500A98173 /* open_listenfd.c */; };
 		016DF9D31AEE044500A98173 /* rio.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9CC1AEE044500A98173 /* rio.c */; };
+		016DF9D61AEE04BB00A98173 /* clienterror.c in Sources */ = {isa = PBXBuildFile; fileRef = 016DF9D41AEE04BB00A98173 /* clienterror.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		016DF9CB1AEE044500A98173 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme; path = compact/readme; sourceTree = SOURCE_ROOT; };
 		016DF9CC1AEE044500A98173 /* rio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rio.c; path = compact/rio.c; sourceTree = SOURCE_ROOT; };
 		016DF9CD1AEE044500A98173 /* rio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rio.h; path = compact/rio.h; sourceTree = SOURCE_ROOT; };
+		016DF9D41AEE04BB00A98173 /* clienterror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = clienterror.c; path = compact/clienterror.c; sourceTree = SOURCE_ROOT; };
+		016DF9D51AEE04BB00A98173 /* clienterror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = clienterror.h; path = compact/clienterror.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				016DF9C31AEE044500A98173 /* doit.c */,
+				016DF9D41AEE04BB00A98173 /* clienterror.c */,
+				016DF9D51AEE04BB00A98173 /* clienterror.h */,
 				016DF9C41AEE044500A98173 /* doit.h */,
 				016DF9C51AEE044500A98173 /* interclient.c */,
 				016DF9C61AEE044500A98173 /* interclient.h */,
@@ -146,6 +151,7 @@
 			files = (
 				016DF9D31AEE044500A98173 /* rio.c in Sources */,
 				016DF9D21AEE044500A98173 /* open_listenfd.c in Sources */,
+				016DF9D61AEE04BB00A98173 /* clienterror.c in Sources */,
 				016DF9CE1AEE044500A98173 /* doit.c in Sources */,
 				016DF9CF1AEE044500A98173 /* interclient.c in Sources */,
 				016DF9D11AEE044500A98173 /* makefile in Sources */,
