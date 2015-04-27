@@ -80,7 +80,8 @@ void doit(int fd)
             sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\nc",a,server);
     }
 
-    unsigned long len = strlen(nbuf)+1;
+    printf("%s",nbuf);
+    unsigned long len = strlen(nbuf)+2;
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
