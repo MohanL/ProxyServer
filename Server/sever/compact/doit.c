@@ -14,7 +14,7 @@
 #include "rio.h"
 #include <string.h>
 #include "interclient.h"
-#incldue "clienterror.h"
+#include "clienterror.h"
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
 #define LISTENQ  1024  /* Second argument to listen() */
