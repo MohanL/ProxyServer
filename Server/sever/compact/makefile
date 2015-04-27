@@ -19,4 +19,3 @@ main.o: open_listenfd.h open_listenfd.c rio.h rio.c doit.h doit.c
 
 build: $(FILES);$(CC) -pthread -o $(OUT_EXE) $(FILES)
 clean:;-rm -f *.o core ProxyServer
-test:;~cs252/labs15/proxy-test.py cycle1.csug.rochester.edu 8080
