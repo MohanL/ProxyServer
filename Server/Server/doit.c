@@ -75,7 +75,7 @@ void doit(int fd)
             suburi = p;
         }
         if(strcmp(suburi, server) == 0)
-            sprintf(nbuf,"GET home.html HTTP/1.1\r\nhost: %sa\r\nb\r\n",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost: %sa\r\nb\r\n",server);
         else
             sprintf(nbuf,"GET %s HTTP/1.1\r\nhost: %s\r\n\r\n",a,server);
     }
@@ -88,7 +88,17 @@ void doit(int fd)
     if(strcmp(request,"GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n"))
         puts("yeah they are the same");
     else
+    {
         puts("nope");
+        int a = strlen("GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n");
+        char b[a];
+        strcpy(b, "GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n");
+        
+        puts(strlen(request));
+        puts(strlen(b));
+        
+    }
+    
     interclient(server,80,request,fd);
     
     
