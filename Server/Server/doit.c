@@ -96,11 +96,10 @@ void doit(int fd)
         
         printf("%lu",strlen(request));
         printf("%lu",strlen(b));
-        interclient(server,80,b,fd);
         
     }
     
-    //interclient(server,80,request,fd);
+    interclient(server,80,request,fd);
     
     
     // this line of code doesn't really do anything, does it ?
