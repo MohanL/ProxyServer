@@ -81,7 +81,7 @@ void doit(int fd)
     }
 
     printf("%s",nbuf);
-    unsigned long len = strlen(nbuf)+5;
+    unsigned long len = strlen(nbuf)+6;
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
