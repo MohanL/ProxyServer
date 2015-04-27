@@ -49,7 +49,6 @@ void doit(int fd)
         p = strtok(uri, "/");
         server = strtok (NULL, "/");
         suburi = p;
-        //printf("%s\n",p);
         while (p != NULL)
         {
             suburi = p;
@@ -62,16 +61,13 @@ void doit(int fd)
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
         
-        //printf("%s",nbuf);
 
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
-        //printf("case 2: there is no http\n");
         p = strtok(uri, "/");
         server = p;
         suburi = p;
-        //printf("%s\n",p);
         while (p != NULL)
         {
             suburi = p;
@@ -81,18 +77,16 @@ void doit(int fd)
         
         if(strcmp(suburi, server) == 0)
             sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
-        //combine the request into (method suburi version\r\n host: server\r\n"
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
         
-        //printf("%s",nbuf);
     }
     
     
     // at this point we have variable char * server, char nbuf and port = 80
     
-    // Segfault
-   
+    puts(nbuf);
+    /*
     unsigned long len = strlen(nbuf)-1;
     char request[len];
     bzero(request, len);
@@ -100,7 +94,7 @@ void doit(int fd)
     printf("%s",request);
     puts("REMOTE SERVER OUTPUT");
     interclient(server,80,request,fd);
-    
+    */
     
     
     // this line of code doesn't really do anything, does it ?
