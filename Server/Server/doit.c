@@ -45,46 +45,48 @@ void doit(int fd)
     // trouble shooting: suburi is not parsed correctly.
     if(strstr(uri, "http")) // case the server has GET http://www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
+        puts("case1");
         p = strtok(uri, "/");
         server = strtok (NULL, "/");
         suburi = p;
-        char * a = NULL;
+        char a[1000];
+        bzero(a, sizeof(a));
         while ((p=strtok(NULL, "/"))!= NULL){
-            a = strcat(a,p);
+            strcat(a,"/");
+            strcat(a, p);
+            puts(a);
             suburi = p;
         }
         if(strcmp(suburi, "http:")== 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\n",server);
         else
-            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
-        puts(a);
+            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%s\r\n\r\n",a,server);
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
+        puts("case2");
         p = strtok(uri, "/");
-        server = p;
         suburi = p;
-        while (p != NULL){
+        server = p;
+        char a[50];
+        while ((p=strtok(NULL, "/"))!= NULL){
+            strcat(a,"/");
+            strcat(a, p);
             suburi = p;
-            p= strtok (NULL, "/");
         }
         if(strcmp(suburi, server) == 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
+            sprintf(nbuf,"GET home.html HTTP/1.1\r\nhost:%s\r\n\r\n",server);
         else
-            sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
+            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%s\r\n\r\n",a,server);
     }
-    // at this point we have variable char * server, char nbuf and port = 80
-    
-    puts(nbuf);
-    /*
-    unsigned long len = strlen(nbuf)-1;
+
+    unsigned long len = strlen(nbuf);
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
     printf("%s",request);
     puts("REMOTE SERVER OUTPUT");
     interclient(server,80,request,fd);
-    */
     
     
     // this line of code doesn't really do anything, does it ?
