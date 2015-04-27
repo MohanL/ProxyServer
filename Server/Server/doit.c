@@ -47,12 +47,11 @@ void doit(int fd)
     {
         p = strtok(uri, "/");
         server = strtok (NULL, "/");
-        suburi = strtok(NULL,"/");
-       /* while (p != NULL){
-            suburi = p;
+        while (p != NULL){
+            strcat(suburi, p);
             p= strtok (NULL, "/");
-           }
-        */
+            
+        }
         if(strcmp(suburi, "http:")== 0)
             sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
         else
