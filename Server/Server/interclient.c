@@ -78,16 +78,16 @@ int interclient(char * hostname,int port, char request[],int fd)
     if(strstr(server_reply,"chunked"))
     {
 	puts("we are working on chunked transfer encoding"); 
-        write(fd, server_reply , sizeof(server_reply));
+        write(fd, server_reply ,sizeof(server_reply));
     	while(!strstr(server_reply,"0\r\n\r\n"))
-	{	
+        {
         	write(fd, server_reply , sizeof(server_reply));
     		bzero(server_reply,MAXBUF);
-		recv(sock,server_reply,MAXBUF,0);	
-	}
-        write(fd, server_reply , sizeof(server_reply));
+            recv(sock,server_reply,MAXBUF,0);
+        }
+        write(fd, server_reply , strlen(server_reply));
     }	    
-    else{
+    else{ //100%
 	puts("normal encoding");
         write(fd, server_reply , sizeof(server_reply));
         bzero(server_reply,MAXBUF);
@@ -95,7 +95,6 @@ int interclient(char * hostname,int port, char request[],int fd)
     	{
         	//puts(server_reply);
         	write(fd, server_reply , sizeof(server_reply));
-
         	//if(strchr(server_reply, '\0')!=NULL)
          	//   break;
         	bzero(server_reply,MAXBUF);
