@@ -28,6 +28,16 @@
 		01FAC2291AEB325000966384 /* interclient.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FAC2271AEB325000966384 /* interclient.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		016DF9AA1AEE01E600A98173 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 016DF9A61AEE01E500A98173 /* sever.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 016DF99C1AEE01E500A98173;
+			remoteInfo = sever;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		01C142921AE753E30094B614 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -42,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		016237F11AEC63A60031F752 /* multiserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = multiserver.c; path = examplecode/multiserver.c; sourceTree = "<group>"; };
+		016DF9A61AEE01E500A98173 /* sever.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sever.xcodeproj; path = sever/sever.xcodeproj; sourceTree = "<group>"; };
 		01909F971AE977C1003B72D6 /* simpleecho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = simpleecho.c; sourceTree = "<group>"; };
 		01909F9A1AE977DD003B72D6 /* iecho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iecho.c; sourceTree = "<group>"; };
 		01909F9C1AE98AB3003B72D6 /* echotest.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = echotest.sh; sourceTree = "<group>"; };
@@ -124,9 +135,18 @@
 			name = related;
 			sourceTree = "<group>";
 		};
+		016DF9A71AEE01E500A98173 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				016DF9AB1AEE01E600A98173 /* sever */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		01C1428B1AE753E30094B614 = {
 			isa = PBXGroup;
 			children = (
+				016DF9A61AEE01E500A98173 /* sever.xcodeproj */,
 				01C142961AE753E30094B614 /* Server */,
 				01C142951AE753E30094B614 /* Products */,
 			);
@@ -238,12 +258,28 @@
 			mainGroup = 01C1428B1AE753E30094B614;
 			productRefGroup = 01C142951AE753E30094B614 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 016DF9A71AEE01E500A98173 /* Products */;
+					ProjectRef = 016DF9A61AEE01E500A98173 /* sever.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				01C142931AE753E30094B614 /* Server */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		016DF9AB1AEE01E600A98173 /* sever */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = sever;
+			remoteRef = 016DF9AA1AEE01E600A98173 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01C142901AE753E30094B614 /* Sources */ = {
