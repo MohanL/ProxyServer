@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include "rio.h"
 #include <string.h>
-#include "parse_uri.h"
 #include "clienterror.h"
 #include "interclient.h"
 #define	MAXLINE	 8192  /* Max text line length */
