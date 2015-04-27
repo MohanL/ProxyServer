@@ -79,7 +79,7 @@ void doit(int fd)
         else
             sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\nc",a,server);
     }
-
+    printf("%lu",sizeof("\r\n"));
     printf("%s",nbuf);
     unsigned long len = strlen(nbuf)+6;
     char request[len];
