@@ -47,15 +47,17 @@ void doit(int fd)
     {
         p = strtok(uri, "/");
         server = strtok (NULL, "/");
-        while (p != NULL){
-            strcat(suburi, p);
-            p= strtok (NULL, "/");
-            
+        suburi = p;
+        char * a;
+        while ((p=strtok(NULL, "/"))!= NULL){
+            strcat(a,p);
+            suburi = p;
         }
         if(strcmp(suburi, "http:")== 0)
             sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\na",server);
         else
             sprintf(nbuf,"GET /%s HTTP/1.1\r\nhost:%s\r\n\r\na",suburi,server);
+        puts(a);
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
