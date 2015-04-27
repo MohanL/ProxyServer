@@ -1,7 +1,7 @@
 #macro
 CC=gcc
 
-FILES = open_listenfd.o rio.o doit.o main.o interclient.o
+FILES = open_listenfd.o rio.o doit.o main.o interclient.o clienterror.o
 
 
 OUT_EXE = ProxyServer
@@ -15,7 +15,6 @@ rio.o: rio.c rio.h
 interclient.o : interclient.c interclient.h
 clienterror.o : clienterror.c clienterror.h rio.c rio.h
 doit.o: doit.h doit.c rio.h rio.c interclient.c interclient.h clienterror.c clienterror.h
-
 main.o: open_listenfd.h open_listenfd.c rio.h rio.c doit.h doit.c
 
 build: $(FILES);$(CC) -pthread -o $(OUT_EXE) $(FILES)
