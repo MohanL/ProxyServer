@@ -58,9 +58,9 @@ void doit(int fd)
             suburi = p;
         }
         if(strcmp(suburi, "http:")== 0)
-            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%sa\r\nb\r\nc",server);
+            sprintf(nbuf,"GET /home.html HTTP/1.1\r\nhost:%s\r\n\r\nc",server);
         else
-            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\nc",a,server);
+            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%s\r\n\r\nc",a,server);
     }
     else// case the server doesn't have http : GET www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
@@ -77,14 +77,18 @@ void doit(int fd)
         if(strcmp(suburi, server) == 0)
             sprintf(nbuf,"GET home.html HTTP/1.1\r\nhost:%sa\r\nb\r\nc",server);
         else
-            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%sa\r\nb\r\nc",a,server);
+            sprintf(nbuf,"GET %s HTTP/1.1\r\nhost:%s\r\n\r\nc",a,server);
     }
-    printf("%lu",sizeof("\r\n"));
     printf("%s",nbuf);
+    /*
     unsigned long len = strlen(nbuf)+6;
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
+    */
+    char request[50];
+    bzero(request, 50);
+    strncpy(request, nbuf, 50);
     printf("%s",request);
     //puts("REMOTE SERVER OUTPUT");
     //interclient(server,80,request,fd);
