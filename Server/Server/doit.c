@@ -48,9 +48,9 @@ void doit(int fd)
         p = strtok(uri, "/");
         server = strtok (NULL, "/");
         suburi = p;
-        char * a;
+        char * a = NULL;
         while ((p=strtok(NULL, "/"))!= NULL){
-            strcat(a,p);
+            a = strcat(a,p);
             suburi = p;
         }
         if(strcmp(suburi, "http:")== 0)
