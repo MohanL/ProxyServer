@@ -85,6 +85,7 @@ void doit(int fd)
     bzero(request, len);
     strncpy(request, nbuf, len);
     printf("%s",request);
+    //they have the same length.
     if(strcmp(request,"GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n"))
         puts("yeah they are the same");
     else
@@ -99,6 +100,9 @@ void doit(int fd)
         
     }
     
+    if(strcmp("GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n" ,"GET /mumbo.html HTTP/1.1\r\nhost: www.foo.com\r\n\r\n"))
+        puts("they have to be the same");
+
     interclient(server,80,request,fd);
     
     
