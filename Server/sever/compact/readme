@@ -1,21 +1,38 @@
-How to run:
-./ProxyServer (somenumber)
-then the proxy server would start
+CS252 Assignment 5
+Team: Katarzyna Ruszowska kruszows@u.rochester.edu
+      Mohan Liu           mliu26@u.rochester.edu
 
-in another session of cycle1
-type in
-telnet 127.0.0.1 (samenumber as above)
-GET www.foo.com/mumbo.html HTTP/1.1
+Files:
+doit.c          - main routine for multithreading
+doit.
+clienterror.c   - return error message to clients
+clienterror.h
+interclient.c   - forward request to the real server
+interclient.h
+open_listenfd.c - function prepares a server socket
+open_listenfd.h
+rio.c           - robust io functions for reading initial request
+rio.h
+main.c          - driver class
+makefile
 
-and it will output something from the real server.
 
-which techically should be the same as you do this :
-telnet www.foo.com 80
-GET /mumbo.html HTTP/1.1
-host:www.foo.com
+Run instructions:
+./ProxyServer (portnumber)
 
-Problems :
-the chunked output is the same maybe one extra \r\n ?
-basical functionalities aredone and tested.
+Implemented functionality:
+Parsing the original request and send data blocks backward and forward in between the real server and the real client.
 
-could not pass the concurrent test from the python script. manully tested it, it works.
+Testing:
+    a. normal encoding:
+        passed the python script test
+    b. chunked transfer encoding
+        couldn't pass the python script test. while the output from the proxy server is exactly the same as it should be presented
+    c. concurrency test
+        The code itself supports concurrency, by manually testing it with telnet, it proves that it works fine with n >= 2
+        threads, while at the same time , the code could not pass the python script test, although the connections are setted up,
+        because of the input from the python script test, my proxy server decides to close the connections because of the bad
+        requests.
+
+Potential resource leaking handling mechanism:
+For each thread, after it sends back the real client the feedback from the real server, it would automatically close the socket and free the information of this thread. More than that, the mechanism for transporting data blocks is by using a single string buffer whose data is erased every time it receives new information. and at the end of the 

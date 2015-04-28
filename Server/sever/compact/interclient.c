@@ -1,10 +1,8 @@
-//
-//  client.c
-//  Server
-//
-//  Created by Mohan Liu on 4/24/15.
-//  Copyright (c) 2015 Mohan Liu. All rights reserved.
-//
+/*
+ CS252 Assignment 5
+ Team: Katarzyna Ruszowska kruszows@u.rochester.edu
+ Mohan Liu           mliu26@u.rochester.edu
+*/
 
 // basically create a intermediate client and send the real server the real stuff
 #include<stdio.h> //printf

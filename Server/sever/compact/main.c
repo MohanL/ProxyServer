@@ -1,10 +1,8 @@
-//
-//  m.c
-//  Server
-//
-//  Created by Mohan Liu on 4/22/15.
-//  Copyright (c) 2015 Mohan Liu. All rights reserved.
-//
+/*
+ CS252 Assignment 5
+ Team: Katarzyna Ruszowska kruszows@u.rochester.edu
+ Mohan Liu           mliu26@u.rochester.edu
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
