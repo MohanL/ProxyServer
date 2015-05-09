@@ -52,21 +52,27 @@ int main (int argc, char **argv)
     }
      */
     clientlen = sizeof(clientaddr);
-    while ((connfd = accept(listenfd,(void *)&clientaddr,&clientlen)) > 0) {
-        //puts("New connection accepted");
+    while(1) {
         
+        if((connfd = accept(listenfd,(void *)&clientaddr,&clientlen)) <0)
+        {
+          // handle failing of accept
+            continue;
+        }
+        //puts("New connection accepted");
+            
         pthread_t t;
         int *new_sock = malloc(1);
         *new_sock = connfd;
         
         if(pthread_create(&t,NULL,connection_handler,(void*)new_sock)< 0)
         {
-            perror("coudld not create thread");
+            perror("could not create thread");
             return 1;
         }
         //puts("handler assigned");
     }
-    if(connfd < 0 )
+    if(connfd < 0)
     {
         perror("accept failed");
         return 1;
