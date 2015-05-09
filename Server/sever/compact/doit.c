@@ -74,6 +74,6 @@ void doit(int fd)
     char request[len];
     bzero(request, len);
     strncpy(request, nbuf, len);
-    printf("%s",request);
+    //printf("%s",request);
     interclient(server,80,request,fd);
 }

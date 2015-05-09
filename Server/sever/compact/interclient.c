@@ -72,14 +72,18 @@ int interclient(char * hostname,int port, char request[],int fd)
         //puts("we are working on chunked transfer encoding");
         
         // the difference between the java version and the C version is the string concatenation here, char[] is not allowed to concatenate over here, but in java, it is fine.
-        while(!strstr(server_reply,"0\r\n\r\n"))
+        write(fd, server_reply , sizeof(server_reply));
+        while(!strstr(server_reply,"0\r\n\r\n")&& (recv(sock, server_reply, MAXBUF, 0)<0))
         {
         	write(fd, server_reply , sizeof(server_reply));
     		bzero(server_reply,MAXBUF);
-            recv(sock,server_reply,MAXBUF,0);
+           // recv(sock,server_reply,MAXBUF,0);
         }
         // I didn't notice here that I used strlen, which may affect the behavior
         write(fd, server_reply , sizeof(server_reply));
+        
+        // ERROR message : FAILED IncompleteRead(0 bytes read), did I not read everything ?
+
     }
     
     else{ //100%

@@ -64,7 +64,7 @@ int main (int argc, char **argv)
             perror("coudld not create thread");
             return 1;
         }
-        puts("handler assigned");
+        //puts("handler assigned");
     }
     if(connfd < 0 )
     {
