@@ -38,4 +38,4 @@ Potential resource leaking handling mechanism:
 For each thread, after it sends back the real client the feedback from the real server, it would automatically close the socket and free the information of this thread. More than that, the mechanism for transporting data blocks is by using a single string buffer whose data is erased every time it receives new information. and at the end of the
 
 
-Test.
+Testt.
