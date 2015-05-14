@@ -38,7 +38,6 @@
 		016DF9C81AEE044500A98173 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = makefile; path = compact/makefile; sourceTree = SOURCE_ROOT; };
 		016DF9C91AEE044500A98173 /* open_listenfd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = open_listenfd.c; path = compact/open_listenfd.c; sourceTree = SOURCE_ROOT; };
 		016DF9CA1AEE044500A98173 /* open_listenfd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = open_listenfd.h; path = compact/open_listenfd.h; sourceTree = SOURCE_ROOT; };
-		016DF9CB1AEE044500A98173 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme; path = compact/readme; sourceTree = SOURCE_ROOT; };
 		016DF9CC1AEE044500A98173 /* rio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rio.c; path = compact/rio.c; sourceTree = SOURCE_ROOT; };
 		016DF9CD1AEE044500A98173 /* rio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rio.h; path = compact/rio.h; sourceTree = SOURCE_ROOT; };
 		016DF9D41AEE04BB00A98173 /* clienterror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = clienterror.c; path = compact/clienterror.c; sourceTree = SOURCE_ROOT; };
@@ -85,7 +84,6 @@
 				016DF9C81AEE044500A98173 /* makefile */,
 				016DF9C91AEE044500A98173 /* open_listenfd.c */,
 				016DF9CA1AEE044500A98173 /* open_listenfd.h */,
-				016DF9CB1AEE044500A98173 /* readme */,
 				016DF9CC1AEE044500A98173 /* rio.c */,
 				016DF9CD1AEE044500A98173 /* rio.h */,
 			);
@@ -272,6 +270,7 @@
 				016DF9A51AEE01E500A98173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
