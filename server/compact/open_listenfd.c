@@ -8,24 +8,15 @@
 #include <netdb.h>
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
-#define LISTENQ  1024  /* Second argument to listen() */
+#define LISTENQ  2000  /* Maximum number of client connections*/
 
 
 int open_listenfd(int port)
 {
     int listenfd,optval = 1;
     struct sockaddr_in serveraddr;
- 
-    
-    // again we are creating a socket, about the parameters, I just copied and pasted from the client.c file
-    // whether the host is a client or a server, a socket descriptor is necessary
-    // the socket function returns -1 if error, nonnegative socket descriptor if correct
-    // AF_INET indicates that we are using the Internet
-    // SOCK_STREAM indicates that the socket will be an end point for an Internet connection.
-    // clientfd descriptor returned by socket is only partially opened and cannot yet be used for reading and writing.
     if((listenfd = socket(AF_INET, SOCK_STREAM, 0))< 0)
         return -1;
-    
     // setsockopt function : The setsockopt function sets a socket option.
     /* protocal type of the setsockopt function 
      * int setsockopt( SOCKET s, int level, int optname, const char *optval, int optlen );
@@ -48,17 +39,16 @@ int open_listenfd(int port)
      *  that it can be terminated and restarted immediately. By default,
      *  a restarted     server will deny connection requests from clients for
      *  approximately 30 seconds, which seriously hinders debugging.
-
-     *
-     *
-     *
      */
-    // Eliminate "Address already in use "error from bind
-    if(setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (const void *)&optval, sizeof(int)))
-        return -1;
     
+    // Eliminate "Address already in use "error from bind
+    //Modified by Mohan Liu
+    /* if(setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (const void *)&optval, sizeof(int)))
+        return -1;
+    */
     // Listenfd will be an end point for all request to port on any IP address for this host
     bzero((char *)&serveraddr, sizeof(serveraddr));
+    memset(&serveraddr,0,sizeof(serveraddr));
     
     /* we initialize the server’s socket address structure in preparation for 
      * calling the bind function. In this case, we have used the INADDR_ANY wild-
@@ -77,8 +67,7 @@ int open_listenfd(int port)
      * the bind function tells the server's kernel to associate the server's socket address
      * stored in my_addr with the socket descriptor sockfd, the addrlen argument is sizeof(sockaddr_in)
      */
-    if(bind(listenfd, (void *)&serveraddr, sizeof(serveraddr)) < 0)
-    {
+    if(bind(listenfd, (void *)&serveraddr, sizeof(serveraddr)) < 0){
         perror("bind failed, Error");
         return -1;
     }
@@ -94,11 +83,9 @@ int open_listenfd(int port)
       */
      // make it a listening socket ready to accept connection requests
     if(listen(listenfd,LISTENQ) < 0){
-        
         perror("listen failed, Error");
         return -1;
     }
     return listenfd;
-    
 }
 

@@ -10,7 +10,7 @@
 #include "interclient.h"
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
-#define LISTENQ  1024  /* Second argument to listen() */
+#define LISTENQ  2000  /* maximum number of connections */
 void doit(int fd)
 {
     char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[MAXLINE];

@@ -20,6 +20,10 @@ int main (int argc, char **argv)
     int listenfd, connfd, port, clientlen;
     struct sockaddr_in clientaddr;
 
+    
+    /*ignore the SIGPIPE signal*/
+    //signal(SIGPIPE,SIG_IGN);
+    
     // check cmd args
     if(argc != 2)
     {
@@ -30,33 +34,24 @@ int main (int argc, char **argv)
     port = atoi(argv[1]);
     
     // prepare a server socket which is ready to connect to client
-    listenfd = open_listenfd(port);
-    
-    //  I need to modify this, currently it is not multithreading but iterative.
-    /*
-    while(1)
-    {
-        clientlen = sizeof(clientaddr);
-        if((connfd = accept(listenfd,(void *) &clientaddr,&clientlen)) < 0)
-        {
-            perror("accept failed\n");
-            return -1;
-        }
-        puts("connection accepted\n");
-        doit(connfd);
-        close(connfd);
+    if((listenfd = open_listenfd(port)) < 0){
+        perror("Problem in creating the socket");
+        exit(2);
     }
-     */
+    
+    printf("%s\n","Server running ... waiting for incoming connections");
+
     clientlen = sizeof(clientaddr);
     while(1) {
         
         if((connfd = accept(listenfd,(void *)&clientaddr,&clientlen)) <0)
         {
-          // handle failing of accept
+            puts("connection error");
             continue;
         }
-        //puts("New connection accepted");
-            
+        puts("New connection accepted");
+        
+        /* multi-threading */
         pthread_t t;
         int *new_sock = malloc(1);
         *new_sock = connfd;

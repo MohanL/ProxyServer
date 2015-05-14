@@ -25,8 +25,6 @@ int interclient(char * hostname,int port, char request[],int fd)
         printf("could not create client socket\n");
         return -1;
     }
-    
-    
     // get our host's information
     // fill in the server's IP address and port
     if ((hp = gethostbyname(hostname))== NULL) {
@@ -35,12 +33,17 @@ int interclient(char * hostname,int port, char request[],int fd)
     }
     
     // configure the server
-    bzero((char *)&server,sizeof(server));
-    
     //copy the first IP address in the host entry (which is already in network byte order) to the server’s socket address structure
+    bzero((char *)&server,sizeof(server));
     server.sin_family = AF_INET;
     bcopy((char *) hp->h_addr_list[0],
           (char *)&server.sin_addr.s_addr,hp->h_length);
+    
+    /* second two to configure the server
+    *  memset(&server, 0, sizeof(server));
+    *  server.sin_family = AF_INET;
+    *  server.sin_addr.s_addr= inet_addr(hp->h_addr_list[0]);
+    */
     
     // convert between host to network byte order.
     server.sin_port=htons(port);
@@ -55,13 +58,14 @@ int interclient(char * hostname,int port, char request[],int fd)
     //printf("intermediate connection successful\n");
     
     //going to send the server things that real client send to this server
-    if( send(sock,request, MAXBUF , 0) < 0)
+    if( send(sock,request, strlen(request) , 0) < 0)
     {
             puts("Send failed");
             return 1;
     }
     
     bzero(server_reply,MAXBUF);
+    // should add some checking mechanism for the recv function
     recv(sock,server_reply,MAXBUF,0);
     if(strstr(server_reply,"Transfer-Encoding: chunked"))
     {
