@@ -100,6 +100,7 @@ int interclient(char * hostname,int port, char request[],int fd)
     	write(fd, end, sizeof(end));
     }
     close(sock);
+    puts("connection closed");
     return 0;
     
 }
