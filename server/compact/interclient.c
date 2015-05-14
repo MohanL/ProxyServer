@@ -1,8 +1,4 @@
-/*
- CS252 Assignment 5
- Team: Katarzyna Ruszowska kruszows@u.rochester.edu
- Mohan Liu           mliu26@u.rochester.edu
-*/
+
 
 // basically create a intermediate client and send the real server the real stuff
 #include<stdio.h> //printf

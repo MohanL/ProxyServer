@@ -1,6 +1,5 @@
 CS252 Assignment 5
-Team: Katarzyna Ruszowska kruszows@u.rochester.edu
-      Mohan Liu           mliu26@u.rochester.edu
+
 
 Files:
 doit.c          - main routine for multithreading
@@ -23,19 +22,3 @@ Run instructions:
 Implemented functionality:
 Parsing the original request and send data blocks backward and forward in between the real server and the real client.
 
-Testing:
-    a. normal encoding:
-        passed the python script test
-    b. chunked transfer encoding
-        couldn't pass the python script test. while the output from the proxy server is exactly the same as it should be presented
-    c. concurrency test
-        The code itself supports concurrency, by manually testing it with telnet, it proves that it works fine with n >= 2
-        threads, while at the same time , the code could not pass the python script test, although the connections are setted up,
-        because of the input from the python script test, my proxy server decides to close the connections because of the bad
-        requests.
-
-Potential resource leaking handling mechanism:
-For each thread, after it sends back the real client the feedback from the real server, it would automatically close the socket and free the information of this thread. More than that, the mechanism for transporting data blocks is by using a single string buffer whose data is erased every time it receives new information. and at the end of the
-
-
-Testt.
