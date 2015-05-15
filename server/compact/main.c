@@ -13,6 +13,10 @@
 #include "rio.h"
 #include "doit.h"
 // thread function
+
+//resource : http://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
+//resource : https://stackoverflow.com/questions/9137965/regarding-a-simple-tcp-based-echo-server-using-sockets-api
+
 void *connection_handler(void *);
 
 int main (int argc, char **argv)
@@ -20,7 +24,6 @@ int main (int argc, char **argv)
     int listenfd, connfd, port, clientlen;
     struct sockaddr_in clientaddr;
 
-    
     /*ignore the SIGPIPE signal*/
     //signal(SIGPIPE,SIG_IGN);
     
