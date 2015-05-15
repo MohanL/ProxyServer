@@ -53,8 +53,6 @@ int main (int argc, char **argv)
             continue;
         }
         puts("New connection accepted");
-        
-
         pthread_t t;
         int *new_sock = malloc(1);
         *new_sock = connfd;

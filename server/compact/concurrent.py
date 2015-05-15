@@ -22,30 +22,27 @@ proxy = urllib2.ProxyHandler({"http":"http://" + iphost + ":" + `port`})
 opener = urllib2.build_opener(proxy)
 urllib2.install_opener(opener)
 
-def test_fetch_concurrent(n):
+def test_fetch_single(n):
     # concurrent connections
-    
-    clientsock = [None] * n
-    for x in range(0, n):
-        try:
+    try:
             # creating a client socket
-            print 'connection'
-            clientsock[x] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        print 'connection'
+        clientsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 # connecting to the proxy server and leaving the connection open
-            clientsock[x].connect((iphost, port))
+        clientsock.connect((iphost, port))
             #clientsock[x].send('G')
-        except Exception, e:
-            print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
-            return None
+    except Exception, e:
+        print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
+        return None
 # this verifies that all the connections are connected .
 # the problem is that it could not set up >=2 connections with the server.
 # This test verifies that your proxy server can handle concurrent (= 2) connections successfully.
     try:
         html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()
-        print ('Concurrent Fetch ' + str(n) + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
+        print ('Single Fetch ' + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
     except Exception, e:
-        print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
+        print 'Single Fetch '+ ': FAILED ' +  str(e)
 
 if __name__ == '__main__':
-        test_fetch_concurrent(1)
+        test_fetch_single(1)
 
