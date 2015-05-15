@@ -41,7 +41,7 @@ int main (int argc, char **argv)
 
     clientlen = sizeof(clientaddr);
     
-    /*
+    
     while(1) {
         
         if((connfd = accept(listenfd,(void *)&clientaddr,(socklen_t *)&clientlen)) <0)
@@ -62,16 +62,6 @@ int main (int argc, char **argv)
             return 1;
         }
         //puts("handler assigned");
-    }
-    */
-    
-    pthread_t t;
-    while( (connfd = accept(listenfd, (void *)&clientaddr, (socklen_t *)&clientlen)) ){
-    
-        if(pthread_create(&t,NULL,connection_handler,(void*)connfd)< 0){
-            perror("could not create thread");
-            return 1;
-        }
     }
     
     if(connfd < 0)
