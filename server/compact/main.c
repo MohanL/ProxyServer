@@ -17,7 +17,7 @@
 //resource : http://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
 //resource : https://stackoverflow.com/questions/9137965/regarding-a-simple-tcp-based-echo-server-using-sockets-api
 
-// trouble shooting : close the connected socket ( multithreading )
+// trouble shooting : why broken pipe ?
 // elegant code : broke pipe at the end of the output ?
 
 void *connection_handler(void *);
@@ -65,6 +65,8 @@ int main (int argc, char **argv)
             return 1;
         }
         //puts("handler assigned");
+        puts("ckpt1");
+
     }
     
     if(connfd < 0)
@@ -73,6 +75,7 @@ int main (int argc, char **argv)
         return 1;
     }
     
+    puts("ckpt 5");
     return 0;
 }
 
@@ -84,6 +87,7 @@ void * connection_handler(void * socket_in)
     int sock = *(int *)socket_in;
     doit(sock);
     free(socket_in);
+    puts("ckpt3");
     return 0;
 }
 
