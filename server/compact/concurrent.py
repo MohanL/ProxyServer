@@ -28,12 +28,18 @@ def test_fetch_concurrent2():
         clientsock[0] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         clientsock[1] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     #print 'ckpt1'
-    #clientsock[0].connect((iphost, port))
+    clientsock[0].connect((iphost, port))
     #print 'ckpt2'
     # no exception on this.
     except Exception, e:
         print 'Concurrent Fetch 2'+ ': FAILED ' +  str(e)
         return None
+
+    try:
+        html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()
+        print ('Concurrent Fetch ' + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
+    except Exception, e:
+            print 'Concurrent Fetch 2' + ': FAILED ' +  str(e)
 
 if __name__ == '__main__':
 	test_fetch_concurrent2()
