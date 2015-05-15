@@ -28,8 +28,8 @@ def test_fetch_concurrent2():
         clientsock[0] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         clientsock[1] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     #print 'ckpt1'
-        clientsock[0].connect((iphost, port))
-        print 'ckpt2'
+    #clientsock[0].connect((iphost, port))
+    #print 'ckpt2'
     # no exception on this.
     except Exception, e:
         print 'Concurrent Fetch 2'+ ': FAILED ' +  str(e)
