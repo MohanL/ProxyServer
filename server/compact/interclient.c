@@ -13,25 +13,21 @@
 #define MAXBUF   8192  /* Max I/O buffer size */
 int interclient(char * hostname,int port, char request[],int fd)
 {
-    //printf("*%s*\n",hostname);
-    int sock;
+    int sock, n;
     struct hostent *hp;
     struct sockaddr_in server;
     char server_reply[MAXBUF];
     
-    // create a client socket
     if( (sock = socket(AF_INET,SOCK_STREAM,0)) == -1)
     {
         printf("could not create client socket\n");
         return -1;
     }
-    // get our host's information
-    // fill in the server's IP address and port
+
     if ((hp = gethostbyname(hostname))== NULL) {
         printf("invalid host no match in DNS\n");
-        return -2;// can't get correct Domain name from the DNS system
+        return -2;
     }
-    
     // configure the server
     //copy the first IP address in the host entry (which is already in network byte order) to the server’s socket address structure
     bzero((char *)&server,sizeof(server));
@@ -55,8 +51,6 @@ int interclient(char * hostname,int port, char request[],int fd)
         return -1;
     }
     
-    //printf("intermediate connection successful\n");
-    
     //going to send the server things that real client send to this server
     if( send(sock,request, strlen(request) , 0) < 0)
     {
@@ -65,42 +59,57 @@ int interclient(char * hostname,int port, char request[],int fd)
     }
     
     bzero(server_reply,MAXBUF);
-    // should add some checking mechanism for the recv function
-    recv(sock,server_reply,MAXBUF,0);
-    if(strstr(server_reply,"Transfer-Encoding: chunked"))
+    /* modification 1 */
+    while(1)
     {
-        //puts("we are working on chunked transfer encoding");
-        
-        // the difference between the java version and the C version is the string concatenation here, char[] is not allowed to concatenate over here, but in java, it is fine.
-        write(fd, server_reply , sizeof(server_reply));
-        while(!strstr(server_reply,"0\r\n\r\n")&& (recv(sock, server_reply, MAXBUF, 0)<0))
+        n = (int)recv(sock,server_reply,MAXBUF,0);
+        if(n == 0)
         {
-        	write(fd, server_reply , sizeof(server_reply));
-    		bzero(server_reply,MAXBUF);
-           // recv(sock,server_reply,MAXBUF,0);
+            close(sock);
+            break;
         }
-        // I didn't notice here that I used strlen, which may affect the behavior
-        write(fd, server_reply , sizeof(server_reply));
-        
-        // ERROR message : FAILED IncompleteRead(0 bytes read), did I not read everything ?
-
-    }
-    
-    else{ //100%
-        //puts("normal encoding");
-        write(fd, server_reply , sizeof(server_reply));
-        bzero(server_reply,MAXBUF);
-    	while(recv(sock,server_reply , MAXBUF , 0) > 0)
-    	{
-        	
-        	write(fd, server_reply , sizeof(server_reply));
-        	bzero(server_reply,MAXBUF);
-    	}
-    	const char end[] = "\r\n";
-    	write(fd, end, sizeof(end));
+        send(fd,server_reply,n,0);
     }
     close(sock);
     puts("connection closed");
     return 0;
     
 }
+
+ /* modification 1 */
+ /* original version of recv and send function
+ recv(sock,server_reply,MAXBUF,0);
+ if(strstr(server_reply,"Transfer-Encoding: chunked"))
+ {
+ //puts("we are working on chunked transfer encoding");
+ 
+ // the difference between the java version and the C version is the string concatenation here, char[] is not allowed to concatenate over here, but in java, it is fine.
+ write(fd, server_reply , sizeof(server_reply));
+ while(!strstr(server_reply,"0\r\n\r\n")&& (recv(sock, server_reply, MAXBUF, 0)<0))
+ {
+ write(fd, server_reply , sizeof(server_reply));
+ bzero(server_reply,MAXBUF);
+ // recv(sock,server_reply,MAXBUF,0);
+ }
+ // I didn't notice here that I used strlen, which may affect the behavior
+ write(fd, server_reply , sizeof(server_reply));
+ 
+ // ERROR message : FAILED IncompleteRead(0 bytes read), did I not read everything ?
+ 
+ }
+ 
+ else{ //100%
+ //puts("normal encoding");
+ write(fd, server_reply , sizeof(server_reply));
+ bzero(server_reply,MAXBUF);
+ while(recv(sock,server_reply , MAXBUF , 0) > 0)
+ {
+ 
+ write(fd, server_reply , sizeof(server_reply));
+ bzero(server_reply,MAXBUF);
+ }
+ const char end[] = "\r\n";
+ write(fd, end, sizeof(end));
+ }
+ */
+
