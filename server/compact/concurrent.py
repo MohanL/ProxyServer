@@ -28,9 +28,9 @@ def test_fetch_concurrent2():
     clientsock = [None] * 1
     try:
         # creating a client socket
-        clientsock[x] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        clientsock[0] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # connecting to the proxy server and leaving the connection open
-        clientsock[x].connect((iphost, port))
+        clientsock[0].connect((iphost, port))
         #clientsock[x].send('G')
     except Exception, e:
         print 'Concurrent Fetch '+ ': FAILED ' +  str(e)
