@@ -42,6 +42,7 @@
 		016DF9CD1AEE044500A98173 /* rio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rio.h; path = compact/rio.h; sourceTree = SOURCE_ROOT; };
 		016DF9D41AEE04BB00A98173 /* clienterror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = clienterror.c; path = compact/clienterror.c; sourceTree = SOURCE_ROOT; };
 		016DF9D51AEE04BB00A98173 /* clienterror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = clienterror.h; path = compact/clienterror.h; sourceTree = SOURCE_ROOT; };
+		01829D911B057D9D00F03DD2 /* proxy-test.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = "proxy-test.py"; path = "compact/proxy-test.py"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		016DF99E1AEE01E500A98173 /* compactsever */ = {
 			isa = PBXGroup;
 			children = (
+				01829D911B057D9D00F03DD2 /* proxy-test.py */,
 				016DF9C31AEE044500A98173 /* doit.c */,
 				016DF9D41AEE04BB00A98173 /* clienterror.c */,
 				016DF9D51AEE04BB00A98173 /* clienterror.h */,

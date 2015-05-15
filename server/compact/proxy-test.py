@@ -70,6 +70,7 @@ def test_fetch_concurrent(n):
 			print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
 			return None
 
+    print 'all connections contructed'
 	# This test verifies that your proxy server can handle concurrent (= 2) connections successfully.
 	try:
 		html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()
