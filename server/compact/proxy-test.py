@@ -67,7 +67,7 @@ def test_fetch_concurrent(n):
 			clientsock[x].connect((iphost, port))
 			#clientsock[x].send('G')
 		except Exception, e:
-			print 'Concurrent Fetch a' + str(n) + ': FAILED ' +  str(e)
+			print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
 			return None
 
 	# This test verifies that your proxy server can handle concurrent (= 2) connections successfully.
