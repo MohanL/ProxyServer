@@ -37,11 +37,11 @@ def test_fetch_single(n):
 # this verifies that all the connections are connected .
 # the problem is that it could not set up >=2 connections with the server.
 # This test verifies that your proxy server can handle concurrent (= 2) connections successfully.
-    try:
-        html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()
-        print ('Single Fetch ' + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
-    except Exception, e:
-        print 'Single Fetch '+ ': FAILED ' +  str(e)
+#try:
+#html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()
+#        print ('Single Fetch ' + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
+        #except Exception, e:
+#       print 'Single Fetch '+ ': FAILED ' +  str(e)
 
 if __name__ == '__main__':
         test_fetch_single(1)
