@@ -32,7 +32,7 @@ def test_fetch_single(n):
         clientsock.connect((iphost, port))
             #clientsock[x].send('G')
     except Exception, e:
-        print 'Concurrent Fetch '+ ': FAILED ' +  str(e)
+        print 'Single Fetch '+ ': FAILED ' +  str(e)
         return None
 # this verifies that all the connections are connected .
 # the problem is that it could not set up >=2 connections with the server.
