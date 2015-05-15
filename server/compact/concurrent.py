@@ -43,7 +43,7 @@ def test_fetch_concurrent(n):
 	    # This test verifies that your proxy server can handle concurrent (= 2) connections successfully.
         try:
             html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()
-                print ('Concurrent Fetch ' + str(n) + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
+            print ('Concurrent Fetch ' + str(n) + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
         except Exception, e:
             print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
 
