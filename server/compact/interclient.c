@@ -63,7 +63,7 @@ int interclient(char * hostname,int port, char request[],int fd)
     while(1)
     {
         n = (int)recv(sock,server_reply,MAXBUF,0);
-        if(n == 0)
+        if(n == 0) // fixed chunked transfer encoding.
         {
             close(sock);
             break;
