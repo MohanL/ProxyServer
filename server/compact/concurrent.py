@@ -29,7 +29,7 @@ def test_fetch_concurrent(n):
     for x in range(0, n):
         try:
             # creating a client socket
-            print 'connection' +str[x]
+            print 'connection' +str[n]
             clientsock[x] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 # connecting to the proxy server and leaving the connection open
             clientsock[x].connect((iphost, port))
