@@ -68,14 +68,12 @@ int main (int argc, char **argv)
         puts("ckpt1");
 
     }
-    
+    puts("ckpt5");
     if(connfd < 0)
     {
         perror("accept failed");
         return 1;
     }
-    
-    puts("ckpt 5");
     return 0;
 }
 

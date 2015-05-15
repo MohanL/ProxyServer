@@ -29,6 +29,7 @@ def test_fetch_concurrent(n):
     for x in range(0, n):
         try:
             # creating a client socket
+            print 'connection' +str[x]
             clientsock[x] = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 # connecting to the proxy server and leaving the connection open
             clientsock[x].connect((iphost, port))
@@ -37,7 +38,6 @@ def test_fetch_concurrent(n):
             print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
             return None
 # this verifies that all the connections are connected .
-        print 'all connections contructed'
 # the problem is that it could not set up >=2 connections with the server.
 # This test verifies that your proxy server can handle concurrent (= 2) connections successfully.
     try:
@@ -47,5 +47,5 @@ def test_fetch_concurrent(n):
         print 'Concurrent Fetch ' + str(n) + ': FAILED ' +  str(e)
 
 if __name__ == '__main__':
-        test_fetch_concurrent(0)
+        test_fetch_concurrent(1)
 
