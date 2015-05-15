@@ -7,9 +7,9 @@ import sys
 
 if len(sys.argv) != 3:
     print 'Usage: ' + sys.argv[0] + ' <ip or hostname> <port>\n'
-        print 'Example: ' + sys.argv[0] + ' cycle1.csug.rochester.edu 8080'
-        print 'Example: ' + sys.argv[0] + ' 128.151.69.85 8081'
-        sys.exit()
+    print 'Example: ' + sys.argv[0] + ' cycle1.csug.rochester.edu 8080'
+    print 'Example: ' + sys.argv[0] + ' 128.151.69.85 8081'
+    sys.exit()
 
 # command line arguments
 # iphost: is either IP address or hostname of the machine on which your proxy server is running
