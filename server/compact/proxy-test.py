@@ -71,7 +71,7 @@ def test_fetch_concurrent(n):
 			return None
         # this verifies that all the connections are connected .
         # print 'all connections contructed'
-        the problem is that it could not set up >=2 connections with the server.
+        #the problem is that it could not set up >=2 connections with the server.
 	    # This test verifies that your proxy server can handle concurrent (= 2) connections successfully.
     try:
 		html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()

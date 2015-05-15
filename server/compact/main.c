@@ -23,11 +23,7 @@ int main (int argc, char **argv)
 {
     int listenfd, connfd, port, clientlen;
     struct sockaddr_in clientaddr;
-
-    /*ignore the SIGPIPE signal*/
-    //signal(SIGPIPE,SIG_IGN);
     
-    // check cmd args
     if(argc != 2)
     {
         fprintf(stderr, "usage: %s <port> \n", argv[0]);
@@ -36,7 +32,6 @@ int main (int argc, char **argv)
     
     port = atoi(argv[1]);
     
-    // prepare a server socket which is ready to connect to client
     if((listenfd = open_listenfd(port)) < 0){
         perror("Problem in creating the socket");
         exit(2);
@@ -45,16 +40,18 @@ int main (int argc, char **argv)
     printf("%s\n","Server running ... waiting for incoming connections");
 
     clientlen = sizeof(clientaddr);
+    
+    /*
     while(1) {
         
-        if((connfd = accept(listenfd,(void *)&clientaddr,&clientlen)) <0)
+        if((connfd = accept(listenfd,(void *)&clientaddr,(socklen_t *)&clientlen)) <0)
         {
             puts("connection error");
             continue;
         }
         puts("New connection accepted");
         
-        /* multi-threading */
+
         pthread_t t;
         int *new_sock = malloc(1);
         *new_sock = connfd;
@@ -66,6 +63,17 @@ int main (int argc, char **argv)
         }
         //puts("handler assigned");
     }
+    */
+    
+    pthread_t t;
+    while( (connfd = accept(listenfd, (void *)&clientaddr, (socklen_t *)&clientlen)) ){
+    
+        if(pthread_create(&t,NULL,connection_handler,(void*)connfd)< 0){
+            perror("could not create thread");
+            return 1;
+        }
+    }
+    
     if(connfd < 0)
     {
         perror("accept failed");
@@ -74,6 +82,7 @@ int main (int argc, char **argv)
     
     return 0;
 }
+
 // handler for each connection
 // parameter is the connected socket descriptor
 void * connection_handler(void * socket_in)
