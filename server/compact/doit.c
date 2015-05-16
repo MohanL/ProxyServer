@@ -13,6 +13,7 @@
 #define LISTENQ  2000  /* maximum number of connections */
 void doit(int fd)
 {
+    puts("ckpt5");
     char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE],nbuf[MAXLINE];
     rio_t rio;
     
@@ -70,5 +71,6 @@ void doit(int fd)
     bzero(request, len);
     strncpy(request, nbuf, len);
     //printf("%s",request);
+    puts("ckpt6");
     interclient(server,80,request,fd);
 }
