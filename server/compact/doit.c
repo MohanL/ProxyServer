@@ -19,9 +19,14 @@ void doit(int fd)
     
     char * server, *p, *suburi;
     
-    // read request line and headers
-    rio_readinitb(&rio,fd);
-    rio_readlineb(&rio, buf, MAXLINE);
+    // read request line and headers this robust io is not detect empty stuff. should modified to be a while loop ?
+    //rio_readinitb(&rio,fd);
+    //rio_readlineb(&rio, buf, MAXLINE);
+    
+    while (1) {
+        if(read(fd,buf,MAXLINE)>0)
+            break;
+    }
     sscanf(buf,"%s %s %s", method, uri, version);
     if(strcasecmp(method, "GET")) //POST www.cycle1.csug.rochester.edu/home.html HTTP/1.1
     {
@@ -71,6 +76,6 @@ void doit(int fd)
     bzero(request, len);
     strncpy(request, nbuf, len);
     //printf("%s",request);
-    puts("ckpt6");
+    
     interclient(server,80,request,fd);
 }
