@@ -19,7 +19,7 @@ void doit(int fd)
     
     char * server, *p, *suburi;
     
-    // read request line and headers this robust io is not detect empty stuff. should modified to be a while loop ?
+    // read request line and headers this robust io is not detecting empty stuff. should modified to be a while loop
     rio_readinitb(&rio,fd);
     while (1) {
         if(rio_readlineb(&rio, buf, MAXLINE)>0)
