@@ -81,9 +81,11 @@ void * connection_handler(void * socket_in)
 {
     // get the socket descriptor
     int sock = *(int *)socket_in;
-    doit(sock);
-    free(socket_in);
     puts("ckpt3");
+    doit(sock);
+    puts("ckpt4");
+    free(socket_in);
+
     return 0;
 }
 
