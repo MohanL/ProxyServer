@@ -59,7 +59,7 @@ int interclient(char * hostname,int port, char request[],int fd)
     }
     
     bzero(server_reply,MAXBUF);
-    /* modification 1 */
+    /* modification 1 send exactly the received bytes*/
     while(1)
     {
         n = (int)recv(sock,server_reply,MAXBUF,0);

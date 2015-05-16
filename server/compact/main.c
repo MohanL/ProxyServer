@@ -12,13 +12,8 @@
 #include "open_listenfd.h"
 #include "rio.h"
 #include "doit.h"
-// thread function
-
-//resource : http://www.cs.dartmouth.edu/~campbell/cs50/socketprogramming.html
-//resource : https://stackoverflow.com/questions/9137965/regarding-a-simple-tcp-based-echo-server-using-sockets-api
 
 // trouble shooting : why broken pipe ?
-// elegant code : broke pipe at the end of the output ?
 
 void *connection_handler(void *);
 
