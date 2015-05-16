@@ -43,7 +43,17 @@ def test_fetch_single(n):
 #        print ('Single Fetch ' + ': ') + 'PASSED' if hashlib.md5(html).hexdigest() == '5ac3495fa2ffab9e97d519ce8cff1b5c' else 'FAILED invalid hash:' + hashlib.md5(html).hexdigest()
         #except Exception, e:
 #       print 'Single Fetch '+ ': FAILED ' +  str(e)
+def test_fetch_text():
+    # simple fetch - content
+    # [http://cs.rochester.edu/u/hedayati/csc252/lorem.html] is fetched through your proxy server,
+    # and we check to see if the word 'pellentesque' is in the content or not
+    try:
+        html = urllib2.urlopen("http://cs.rochester.edu/u/hedayati/csc252/lorem.html").read()
+        print 'Simple Fetch (Text): ' + 'PASSED' if 'pellentesque' in html else 'FAILED'
+    except Exception, e:
+        print 'Simple Fetch (Text): FAILED ' +  str(e)
 
 if __name__ == '__main__':
-        test_fetch_single(1)
+#test_fetch_single(1)
+    test_fetch_single(0);
 
